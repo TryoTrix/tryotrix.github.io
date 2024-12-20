@@ -15,6 +15,7 @@
             overflow: hidden;
         }
 
+        /* Hintergrundkreise */
         .background {
             position: absolute;
             top: 0;
@@ -22,11 +23,9 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            overflow: hidden;
         }
 
-        /* Kreise mit rechteckiger Bewegung */
-        .circle-rect {
+        .circle {
             position: absolute;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.2);
@@ -35,63 +34,32 @@
             animation: moveRect infinite linear;
         }
 
-        .circle-rect:nth-child(1) {
+        .circle:nth-child(1) {
             width: 200px;
             height: 200px;
             animation-duration: 12s;
             animation-delay: 0s;
         }
 
-        .circle-rect:nth-child(2) {
+        .circle:nth-child(2) {
             width: 150px;
             height: 150px;
             animation-duration: 10s;
             animation-delay: 2s;
         }
 
-        .circle-rect:nth-child(3) {
+        .circle:nth-child(3) {
             width: 100px;
             height: 100px;
             animation-duration: 8s;
             animation-delay: 1s;
         }
 
-        .circle-rect:nth-child(4) {
+        .circle:nth-child(4) {
             width: 250px;
             height: 250px;
             animation-duration: 15s;
             animation-delay: 3s;
-        }
-
-        /* Kreise mit diagonaler Bewegung */
-        .circle-diag {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(5px);
-            animation: moveDiag infinite linear;
-        }
-
-        .circle-diag:nth-child(5) {
-            width: 120px;
-            height: 120px;
-            animation-duration: 11s;
-            animation-delay: 0s;
-        }
-
-        .circle-diag:nth-child(6) {
-            width: 180px;
-            height: 180px;
-            animation-duration: 14s;
-            animation-delay: 3s;
-        }
-
-        .circle-diag:nth-child(7) {
-            width: 140px;
-            height: 140px;
-            animation-duration: 10s;
-            animation-delay: 2s;
         }
 
         @keyframes moveRect {
@@ -112,21 +80,89 @@
             }
         }
 
-        @keyframes moveDiag {
+        /* Japanische Wellen */
+        .wave {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .wave path {
+            animation: wave 8s infinite linear;
+        }
+
+        .wave path:nth-child(1) {
+            fill: rgba(255, 255, 255, 0.3);
+            animation-delay: 0s;
+        }
+
+        .wave path:nth-child(2) {
+            fill: rgba(255, 255, 255, 0.5);
+            animation-delay: 2s;
+        }
+
+        .wave path:nth-child(3) {
+            fill: rgba(255, 255, 255, 0.7);
+            animation-delay: 4s;
+        }
+
+        @keyframes wave {
             0% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(90vw, 90vh);
-            }
-            50% {
-                transform: translate(0, 90vh);
-            }
-            75% {
-                transform: translate(90vw, 0);
+                transform: translateX(0);
             }
             100% {
-                transform: translate(0, 0);
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Glänzende Karte */
+        .shiny-card {
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(145deg, #3d3d3d, #505050);
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+
+        .shiny-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transform: rotate(45deg);
+            animation: shine 4s infinite;
+        }
+
+        .shiny-card-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .shiny-card-content h1 {
+            font-size: 1.5rem;
+        }
+
+        .shiny-card-content p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: rotate(45deg) translate(-150%, -150%);
+            }
+            100% {
+                transform: rotate(45deg) translate(150%, 150%);
             }
         }
 
@@ -140,7 +176,7 @@
             border-radius: 16px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
-            margin-top: 100px;
+            margin-top: 20px;
         }
 
         h1 {
@@ -171,22 +207,36 @@
     </style>
 </head>
 <body>
+    <!-- Hintergrundkreise -->
     <div class="background">
-        <!-- Rechteckig bewegte Kreise -->
-        <div class="circle-rect"></div>
-        <div class="circle-rect"></div>
-        <div class="circle-rect"></div>
-        <div class="circle-rect"></div>
-
-        <!-- Diagonal bewegte Kreise -->
-        <div class="circle-diag"></div>
-        <div class="circle-diag"></div>
-        <div class="circle-diag"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
     </div>
+
+    <!-- Hauptinhalt -->
     <div class="content">
         <h1>Willkommen!</h1>
         <p>Ich bin Dani, und das ist meine Webseite über mich.</p>
         <a href="https://www.nachhilfe-lotusacademy.ch/" target="_blank">Nachhilfe Lotus Academy</a>
+    </div>
+
+    <!-- Glänzende Karte -->
+    <div class="shiny-card">
+        <div class="shiny-card-content">
+            <h1>Pokémon Karte</h1>
+            <p>Das ist ein glänzender Effekt!</p>
+        </div>
+    </div>
+
+    <!-- Japanische Wellen -->
+    <div class="wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path d="M0,96L48,122.7C96,149,192,203,288,218.7C384,235,480,213,576,202.7C672,192,768,192,864,213.3C960,235,1056,277,1152,272C1248,267,1344,213,1392,186.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path d="M0,160L48,186.7C96,213,192,267,288,256C384,245,480,171,576,133.3C672,96,768,96,864,122.7C960,149,1056,203,1152,208C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path d="M0,224L48,213.3C96,203,192,181,288,149.3C384,117,480,75,576,58.7C672,43,768,53,864,80C960,107,1056,149,1152,165.3C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
     </div>
 </body>
 </html>
