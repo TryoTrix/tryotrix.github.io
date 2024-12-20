@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="sd8wKBqyAM_HFobo4xxB6cCAMFNzB1JOS29TldaLpAA" />
-    <title>Google SEO & GPT SEO Projekte</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Über mich</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -131,62 +130,25 @@
 
 
 
-        /* Japanische Wellen */
-        .wave {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+        /* Grid-Container für die Karten */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Karten im Grid */
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
-        .wave path {
-            animation: wave 8s infinite linear;
-        }
-
-        .wave path:nth-child(1) {
-            fill: rgba(255, 255, 255, 0.3);
-            animation-delay: 0s;
-        }
-
-        .wave path:nth-child(2) {
-            fill: rgba(255, 255, 255, 0.5);
-            animation-delay: 2s;
-        }
-
-        .wave path:nth-child(3) {
-            fill: rgba(255, 255, 255, 0.7);
-            animation-delay: 4s;
-        }
-
-        @keyframes wave {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        @keyframes wave {
-    0% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(-150%);
-    }
-}
-
-
 
         /* Glänzende Karte */
         .shiny-card {
-            width: 300px;
+            width: 100%;
             height: 400px;
             background: linear-gradient(145deg, #3d3d3d, #505050);
             border-radius: 20px;
             position: relative;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            margin: 20px auto;
         }
 
         .shiny-card::before {
@@ -210,14 +172,17 @@
             color: white;
         }
 
-        .shiny-card-content h1 {
+        .shiny-card-content h2 {
             font-size: 1.5rem;
+            font-family: 'Montserrat';
+            font-weight: bold;
         }
 
         .shiny-card-content p {
             font-size: 1rem;
             color: #ccc;
         }
+
 
         @keyframes shine {
             0% {
@@ -242,8 +207,10 @@
         }
 
         h1 {
-            font-size: 2.5em;
-            color: #ffffff;
+            text-align: center;
+            margin: 20px;
+            font-size: 2em;
+            color: #fff;
         }
 
         p {
@@ -288,86 +255,67 @@
         <p>Wötsch uf Google ohni Werbig wiit ue, denn chönd mir da zeme mache: Bitte alüte oder uf WhatsApp schriebe 076 281 85 82</p>
     </div>
 
-    <!-- Glänzende Karte NACHHILFE WIL -->
-    <div class="shiny-card">
-      <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/wil" target="_blank" style="display: block; text-decoration: none; color: inherit;">
-          <div class="shiny-card-content">
-              <h2>NACHHILFE WIL LOTUS ACADEMY</h2>
-              <p>SEO Google/GPT: "Nachhilfe Wil"</p>
-              <p>Google SEO Ranking: 1. Seite, Top 3</p>
-          </div>
-      </a>
+    <!-- Karten-Container -->
+    <div class="grid-container">
+        <div class="shiny-card">
+            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/wil" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+                <div class="shiny-card-content">
+                    <h2>NACHHILFE WIL LOTUS ACADEMY</h2>
+                    <p>SEO Google/GPT: "Nachhilfe Wil"</p>
+                    <p>Google SEO Ranking: 1. Seite, Top 3</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="shiny-card">
+            <a href="https://polygon-software.ch/" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+                <div class="shiny-card-content">
+                    <h2>POLYGON SOFTWARE</h2>
+                    <p>SEO Google/GPT: "Softwareentwicklung"</p>
+                    <p>Google SEO Ranking: 1. Seite, Top 3</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="shiny-card">
+            <a href="https://nagelstudio-sg.ch/" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+                <div class="shiny-card-content">
+                    <h2>NAGELSTUDIO ST. GALLEN | DIAMOND NAILS</h2>
+                    <p>SEO Google/GPT: "Nagelstudio St. Gallen"</p>
+                    <p>Google SEO Ranking: 1. Seite</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="shiny-card">
+            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/frauenfeld" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+                <div class="shiny-card-content">
+                    <h2>NACHHILFE FRAUENFELD LOTUS ACADEMY</h2>
+                    <p>SEO Google/GPT: "Nachhilfe Frauenfeld"</p>
+                    <p>Google SEO Ranking: 1. Seite</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="shiny-card">
+            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/winterthur" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+                <div class="shiny-card-content">
+                    <h2>NACHHILFE WINTERTHUR LOTUS ACADEMY</h2>
+                    <p>SEO Google/GPT: "Nachhilfe Winterthur"</p>
+                    <p>Google SEO Ranking: 1. Seite, Top 3</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="shiny-card">
+            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/stgallen" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+                <div class="shiny-card-content">
+                    <h2>NACHHILFE ST. GALLEN LOTUS ACADEMY</h2>
+                    <p>SEO Google/GPT: "Nachhilfe St. Gallen"</p>
+                    <p>Google SEO Ranking: 1. Seite, Top 3</p>
+                </div>
+            </a>
+        </div>
     </div>
-
-
-    <!-- Glänzende Karte NAGELSTUDIO ST. GALLEN -->
-    <div class="shiny-card">
-      <a href="https://nagelstudio-sg.ch/" target="_blank" style="display: block; text-decoration: none; color: inherit;">
-          <div class="shiny-card-content">
-              <h2>NAGELSTUDIO ST. GALLEN | DIAMOND NAILS</h2>
-              <p>SEO Google/GPT: "Nagelstudio St. Gallen"</p>
-              <p>Google SEO Ranking: 1. Seite</p>
-              <p>Frische Webseite seit Dez. 2024</p>
-          </div>
-      </a>
-    </div>
-
-    <!-- Glänzende Karte NACHHILFE FRAUENFELD -->
-    <div class="shiny-card">
-      <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/frauenfeld" target="_blank" style="display: block; text-decoration: none; color: inherit;">
-          <div class="shiny-card-content">
-              <h2>NACHHILFE FRAUENFELD LOTUS ACADEMY</h2>
-              <p>SEO Google/GPT: "Nachhilfe Frauenfeld"</p>
-              <p>Google SEO Ranking: 1. Seite</p>
-          </div>
-      </a>
-    </div>
-
-    <!-- Glänzende Karte SOFTWAREENTWICKLUNG -->
-    <div class="shiny-card">
-      <a href="https://polygon-software.ch/" target="_blank" style="display: block; text-decoration: none; color: inherit;">
-          <div class="shiny-card-content">
-              <h2>POLYGON SOFTWARE</h2>
-              <p>SEO Google/GPT: "Softwareentwicklung"</p>
-              <p>Google SEO Ranking: 1. Seite, Top 3 </p>
-          </div>
-      </a>
-    </div>
-
-
-    <!-- Glänzende Karte NACHHILFE WINTERTHUR -->
-    <div class="shiny-card">
-      <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/winterthur" target="_blank" style="display: block; text-decoration: none; color: inherit;">
-          <div class="shiny-card-content">
-              <h2>NACHHILFE WINTERTHUR LOTUS ACADEMY</h2>
-              <p>SEO Google/GPT: "Nachhilfe Winterthur"</p>
-              <p>Google SEO Ranking: 1. Seite, Top 3</p>
-          </div>
-      </a>
-    </div>
-
-    <!-- Glänzende Karte NACHHILFE ST. GALLEN -->
-    <div class="shiny-card">
-      <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/stgallen" target="_blank" style="display: block; text-decoration: none; color: inherit;">
-          <div class="shiny-card-content">
-              <h2>NACHHILFE ST. GALLEN LOTUS ACADEMY</h2>
-              <p>SEO Google/GPT: "Nachhilfe St. Gallen"</p>
-              <p>Google SEO Ranking: 1. Seite, Top 3</p>
-          </div>
-      </a>
-    </div>
-
-
-
-
-
-    <!-- Japanische Wellen
-    <div class="wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path d="M0,96L48,122.7C96,149,192,203,288,218.7C384,235,480,213,576,202.7C672,192,768,192,864,213.3C960,235,1056,277,1152,272C1248,267,1344,213,1392,186.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            <path d="M0,160L48,186.7C96,213,192,267,288,256C384,245,480,171,576,133.3C672,96,768,96,864,122.7C960,149,1056,203,1152,208C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            <path d="M0,224L48,213.3C96,203,192,181,288,149.3C384,117,480,75,576,58.7C672,43,768,53,864,80C960,107,1056,149,1152,165.3C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-    </div>-->
 </body>
 </html>
