@@ -25,51 +25,76 @@
             overflow: hidden;
         }
 
-        .circle {
+        /* Kreise mit rechteckiger Bewegung */
+        .circle-rect {
             position: absolute;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.2);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(5px);
-            animation: moveCircle infinite linear;
+            animation: moveRect infinite linear;
         }
 
-        .circle:nth-child(1) {
+        .circle-rect:nth-child(1) {
             width: 200px;
             height: 200px;
             animation-duration: 12s;
             animation-delay: 0s;
         }
 
-        .circle:nth-child(2) {
+        .circle-rect:nth-child(2) {
             width: 150px;
             height: 150px;
             animation-duration: 10s;
             animation-delay: 2s;
         }
 
-        .circle:nth-child(3) {
+        .circle-rect:nth-child(3) {
             width: 100px;
             height: 100px;
             animation-duration: 8s;
             animation-delay: 1s;
         }
 
-        .circle:nth-child(4) {
+        .circle-rect:nth-child(4) {
             width: 250px;
             height: 250px;
             animation-duration: 15s;
             animation-delay: 3s;
         }
 
-        .circle:nth-child(5) {
+        /* Kreise mit diagonaler Bewegung */
+        .circle-diag {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            animation: moveDiag infinite linear;
+        }
+
+        .circle-diag:nth-child(5) {
             width: 120px;
             height: 120px;
             animation-duration: 11s;
-            animation-delay: 4s;
+            animation-delay: 0s;
         }
 
-        @keyframes moveCircle {
+        .circle-diag:nth-child(6) {
+            width: 180px;
+            height: 180px;
+            animation-duration: 14s;
+            animation-delay: 3s;
+        }
+
+        .circle-diag:nth-child(7) {
+            width: 140px;
+            height: 140px;
+            animation-duration: 10s;
+            animation-delay: 2s;
+        }
+
+        @keyframes moveRect {
             0% {
                 transform: translate(0, 0);
             }
@@ -81,6 +106,24 @@
             }
             75% {
                 transform: translate(0, 80vh);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes moveDiag {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(90vw, 90vh);
+            }
+            50% {
+                transform: translate(0, 90vh);
+            }
+            75% {
+                transform: translate(90vw, 0);
             }
             100% {
                 transform: translate(0, 0);
@@ -129,11 +172,16 @@
 </head>
 <body>
     <div class="background">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+        <!-- Rechteckig bewegte Kreise -->
+        <div class="circle-rect"></div>
+        <div class="circle-rect"></div>
+        <div class="circle-rect"></div>
+        <div class="circle-rect"></div>
+
+        <!-- Diagonal bewegte Kreise -->
+        <div class="circle-diag"></div>
+        <div class="circle-diag"></div>
+        <div class="circle-diag"></div>
     </div>
     <div class="content">
         <h1>Willkommen!</h1>
