@@ -18,11 +18,13 @@
             //background: linear-gradient(120deg, #5FFC71, #C7FFD0);
 
             overflow-y: auto;
+                height: 100%; /* Stelle sicher, dass die Seite tatsächlich 100% Höhe hat */
+
         }
 
         /* Hintergrundkreise */
         .background {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -72,13 +74,13 @@
                 transform: translate(0, 0);
             }
             25% {
-                transform: translate(80vw, 0);
+                transform: translate(80vw, -10vh); /* Adjusted to allow circles to go beyond the bottom */
             }
             50% {
-                transform: translate(80vw, 80vh);
+                transform: translate(80vw, 100vh); /* Updated to extend fully below the viewport */
             }
             75% {
-                transform: translate(0, 80vh);
+                transform: translate(0, 100vh); /* Updated for consistency */
             }
             100% {
                 transform: translate(0, 0);
@@ -121,13 +123,13 @@
                 transform: translate(0, 0);
             }
             25% {
-                transform: translate(90vw, 90vh);
+                transform: translate(90vw, 100vh); /* Updated to extend fully below the viewport */
             }
             50% {
-                transform: translate(0, 90vh);
+                transform: translate(0, 100vh); /* Updated for consistency */
             }
             75% {
-                transform: translate(90vw, 0);
+                transform: translate(90vw, -10vh); /* Adjusted for diagonal movement */
             }
             100% {
                 transform: translate(0, 0);
@@ -166,7 +168,7 @@
             height: 200%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
             transform: rotate(45deg);
-            animation: shine 20s;// infinite;
+            animation: shine 16s infinite;
         }
 
         .shiny-card-content {
@@ -315,9 +317,9 @@
 
     <!-- Hauptinhalt -->
     <div class="content" style="margin">
-        <h1>SEO Agentur: Google SEO & GPT SEO Projekte</h1>
+        <h1>SEO Agentur: <br>Google SEO & GPT SEO</h1>
             <p>I bi de Dani, und da sind mini SEO Projekt.</p>
-            <p>Wötsch uf Google <b>ohni Werbekoste</b> wiit ue, denn chönd mir da gern zeme mache: Bitte alüte oder uf WhatsApp schriebe 076 281 85 82</p>
+            <p>Wötsch uf Google <b>ohni Werbekoste</b> wiit ue? <br>Chönd mir gern zeme mache: Bitte alüte oder uf WhatsApp schriebe 076 281 85 82</p>
     </div>
 
     <!-- Karten-Container -->
