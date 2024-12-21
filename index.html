@@ -524,18 +524,15 @@ article {
 
 @media (max-width: 768px) {
   .fancy-wipe {
-    animation: fade-in 0.5s ease-in-out;
+    animation: none !important; /* Animationen deaktivieren */
+    opacity: 1; /* Sichtbar machen */
+  }
+
+  .fancy-wipe > span {
+    display: none; /* Zusätzliche Animationselemente entfernen */
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
     </style>
 </head>
