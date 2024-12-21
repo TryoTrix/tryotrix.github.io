@@ -24,6 +24,7 @@
 
         .fancyTitleBody {
         	font-family: Raleway, sans-serif;
+        	line-height: 1.3;
         	display: flex;
         	flex-direction: column;
         	justify-content: space-around;
@@ -220,6 +221,7 @@
 
         .content {
             position: relative;
+            align-items: center;
             max-width: 600px;
             margin: 0 auto;
             text-align: center;
@@ -364,6 +366,7 @@
     	mask-repeat: no-repeat;
     	opacity: 1;
     	will-change: transform, opacity;
+
     	 /* optional: text-align: center; */
     }
 
@@ -460,6 +463,62 @@
   box-sizing: border-box;
 }
 
+
+@property --bg-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
+
+@keyframes spin {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+
+
+article {
+  animation: spin 2.5s infinite linear paused;
+
+
+  background:
+    linear-gradient(
+        to bottom,
+        oklch(0.1 0.2 240 / 0.95),
+        oklch(0.1 0.2 240 / 0.95)
+      )
+      padding-box,
+    conic-gradient(
+        from var(--bg-angle) in oklch longer hue,
+        oklch(0.85 0.37 0) 0 0
+      )
+      border-box;
+
+  border: 6px solid transparent;
+
+  &:hover {
+    animation-play-state: running;
+  }
+}
+
+
+article {
+  border-radius: 1rem;
+  box-shadow: 0.125rem 0.25rem 0.25rem 0.5rem oklch(0.1 0.37 315 / 0.25);
+  color: white;
+  padding: 1rem;
+
+  & p {
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      line-height: 1.1;
+    margin: 0rem 0 0;
+  }
+}
+
+
     </style>
 </head>
 <body>
@@ -496,9 +555,14 @@
 
         <!--<h1>SEO Agentur: <br>Google SEO & GPT SEO</h1>-->
             <p>I bi de Dani, und da sind mini SEO Projekt.</p>
-            <p>Wötsch uf Google <b>ohni Werbekoste</b> wiit ue? <br>Chönd mir gern zeme mache! Bitte alüte oder uf WhatsApp schriebe: 076 281 85 82</p>
-
+            <p>Wötsch uf Google <b>ohni Werbekoste</b> wiit ue? <br>Chönd mir gern zeme mache! Bitte alüte oder uf WhatsApp schriebe:</p>
+            <article>
+            <p>
+              076 281 85 82
+            </p>
+          </article>
     </div>
+
 
 
     <!-- Karten-Container -->
