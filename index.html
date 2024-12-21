@@ -163,6 +163,7 @@
             margin: 0 auto;
         }
 
+
         /* Glänzende Karte */
         .shiny-card {
             width: 100%;
@@ -317,23 +318,23 @@
     }
 
 
-    .fancy-wipe {
-	opacity: 0;
-	margin: 0;
-	font-weight: 900;
-	font-size: 8vw;
+	.fancy-wipe {
+    opacity: 0;
+    margin: 0;
+    font-weight: 900;
+    font-size: clamp(2rem, 8vw, 4rem); /* Responsive font size with a max limit */
     display: inline-block;
-	align-items: center;
-    text-align: center;     /* Auch innerhalb der span-Elemente */
-	position: relative;
-	--duration: 20s;
-	--delay: 0s;
-	--easing: ease-out;
-	--colors: linear-gradient(
-		45deg,
-		#2C88DD,
-		#B75BFF
-	);
+    text-align: center;
+    position: relative;
+    --duration: 20s;
+    --delay: 0s;
+    --easing: ease-out;
+    --colors: linear-gradient(
+        45deg,
+        #2C88DD,
+        #B75BFF
+    );
+}
 
 
     }
@@ -349,6 +350,7 @@
     .fancy-wipe.go {
     	opacity: 1;
     	transition: all 2s ease;
+
     }
 
     .fancy-wipe > span:nth-child(1) {
@@ -488,13 +490,15 @@ section p {
 .code {
   font-size: 2rem;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  padding: 3px; /* Optional: Add some padding */
   color: hsl(0 0% 100%);
   border-radius: 1rem;
   background: hsl(0 0% 6%);
   justify-content: center;
   box-shadow: 0 1px hsl(0 0% 100% / 0.25) inset;
 }
+
 
 .code:hover {
   cursor: grab;
@@ -590,7 +594,7 @@ ul {
             </h1>
 
             <h1 class="fancy-wipe dank" style="--colors: linear-gradient(132deg, rgb(252, 96, 96) 0.00%, rgb(255, 171, 69) 20.00%, rgb(233, 252, 106) 40.00%, rgb(72, 247, 130) 60.00%, rgb(112, 151, 250) 80.00%, rgb(231, 110, 250) 100.00%); --delay: 1s;">
-            		& GPT SEO™️
+            		& GPT SEO<!--™️-->
             </h1>
         </div>
 
