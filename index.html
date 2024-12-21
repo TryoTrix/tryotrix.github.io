@@ -22,6 +22,21 @@
 
         }
 
+        .fancyTitleBody {
+        	font-family: Raleway, sans-serif;
+        	display: flex;
+        	flex-direction: column;
+        	justify-content: space-around;
+        	align-items: center;
+        }
+
+        .fancyTitleBody h1.fancy-wipe {
+          margin: 0px;
+          position: relative;
+          display: inline-block;  /* Beide Schichten übereinander */
+          text-align: center;     /* Text zentrieren */
+        }
+
         /* Hintergrundkreise */
         .background {
             position: fixed;
@@ -216,14 +231,14 @@
             margin-bottom: 60px;
         }
 
-        h1 {
+        /*h1 {
             text-align: center;
             margin: 20px;
             font-size: 2em;
             //color: #fff;
             color: #404040;
             font-family: 'Montserrat';
-        }
+        }*/
 
         p {
             font-size: 1.4em;
@@ -300,6 +315,254 @@
         color: #0075BE;
         font-weight: bold;
     }
+
+
+    .fancy-wipe {
+	opacity: 0;
+	margin: 0;
+	font-weight: 900;
+	font-size: 8vw;
+    display: inline-block;
+	align-items: center;
+    text-align: center;     /* Auch innerhalb der span-Elemente */
+	position: relative;
+	--duration: 20s;
+	--delay: 0s;
+	--easing: ease-out;
+	--colors: linear-gradient(
+		45deg,
+		#2C88DD,
+		#B75BFF
+	);
+
+
+    }
+
+    .fancy-wipe > span {
+      width: max-content;      /* Passt sich der Textbreite an */
+      text-align: center;
+      padding: 0.5rem;
+      margin: 0;              /* Keine zusätzliche Verschiebung */
+      box-sizing: border-box;
+    }
+
+    .fancy-wipe.go {
+    	opacity: 1;
+    	transition: all 2s ease;
+    }
+
+    .fancy-wipe > span:nth-child(1) {
+    	display: block;
+    	padding: 2rem;
+    	color: #404040; /*Titelfarbe Hintergrund*/
+    	animation: wipe-in var(--duration) infinite var(--easing) var(--delay) both;
+    	mask: linear-gradient(to right, black 50%, transparent 50%);
+    	mask-size: 400% 100%;
+    	mask-position: 100% 0%;
+    	mask-repeat: no-repeat;
+    	opacity: 1;
+    	 /* optional: text-align: center; */
+    }
+
+    .fancy-wipe > span:nth-child(2) {
+    	position: absolute;
+    	left: 0;
+    	top: 0;
+    	width: 100%;
+    	height: 100%;
+    	padding: 2rem;
+    	background-image: var(--colors);
+    	-webkit-background-clip: text;
+    	-webkit-text-fill-color: transparent;
+    	animation: wipe-in var(--duration) infinite var(--easing) var(--delay) both;
+    	mask: linear-gradient(to right, transparent 25%, black 38%,  black 60%, transparent 66.7%);
+    	mask-size: 400% 100%;
+    	mask-position: 100% 0%;
+    	mask-repeat: no-repeat;
+    	opacity: 1;
+    }
+
+    .dank.fancy-wipe > span:nth-child(2) {
+    	background-image:  url(https://assets.codepen.io/13471/rainbow-sparkles.png), var(--colors);
+    	background-size: 320px, cover;
+    	background-blend-mode: multiply;
+    }
+
+    .fancy-wipe > span:nth-child(3) {
+    	position: absolute;
+    	left: 0;
+    	top: 0;
+    	width: 100%;
+    	height: 100%;
+    	padding: 2rem;
+    	background-image: var(--colors);
+    	-webkit-background-clip: text;
+    	-webkit-text-fill-color: transparent;
+    	animation: wipe-in var(--duration) infinite var(--easing) var(--delay) both;
+    	filter: blur(10px) brightness(1.3) contrast(1.2) saturate(1.2);
+    	mask: linear-gradient(to right, transparent 33%, black 60%, transparent 75%);
+    	mask-size: 400% 100%;
+    	mask-position: 100% 0%;
+    	mask-repeat: no-repeat;
+    	mix-blend-mode: plus-lighter;
+    	opacity: 1;
+    }
+
+    .fancy-wipe > span:nth-child(4) {
+    	position: absolute;
+    	left: 0;
+    	top: 0;
+    	width: 100%;
+    	height: 100%;
+    	padding: 2rem;
+    	background-image: var(--colors);
+    	-webkit-background-clip: text;
+    	-webkit-text-fill-color: transparent;
+    	animation: wipe-in var(--duration) infinite var(--easing) var(--delay) both;
+    	filter: blur(12px) brightness(1.1) contrast(1.1) saturate(1.1);
+    	mask: linear-gradient(to right, transparent 50%, black 66%, transparent 75%);
+    	mask-size: 400% 100%;
+    	mask-position: 100% 0%;
+    	mask-repeat: no-repeat;
+    	mix-blend-mode: plus-lighter;
+    	opacity: 1;
+    }
+
+    @keyframes wipe-in {
+    	0% {
+    		mask-position: 100% 0%;
+    	}
+    	0%, 39.99% {
+    		animation-timing-function: var(--easing);
+    	}
+    	40%, 100% {
+    		mask-position: 0% 0%;
+    		animation-timing-function: linear;
+    	}
+    	5%, 66% {
+    		opacity: 1;
+    	}
+    	0%, 90%, 100% {
+    		opacity: 0;
+    	}
+    }
+
+
+
+    * {
+  box-sizing: border-box;
+}
+
+
+body::before {
+	--line: hsl(0 0% 95% / 0.25);
+	content: "";
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background:
+		linear-gradient(90deg, var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin,
+		linear-gradient(var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin;
+	mask: linear-gradient(-15deg, transparent 30%, white);
+	top: 0;
+	z-index: -1;
+}
+
+section {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+section p {
+  margin: 0;
+  font-size: 2.25rem;
+  color: hsl(0 0% 40%);
+  text-align: center;
+  background: linear-gradient(hsl(0 0% 80%), hsl(0 0% 50%));
+  color: transparent;
+  background-clip: text;
+}
+
+.code {
+  font-size: 2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  color: hsl(0 0% 100%);
+  border-radius: 1rem;
+  background: hsl(0 0% 6%);
+  justify-content: center;
+  box-shadow: 0 1px hsl(0 0% 100% / 0.25) inset;
+}
+
+.code:hover {
+  cursor: grab;
+}
+
+.digit {
+  display: flex;
+  height: 100%;
+  padding: 2.5rem 0.5rem;
+}
+
+.digit:focus-visible {
+  outline-color: hsl(0 0% 50% / 0.25);
+  outline-offset: 1rem;
+}
+
+.digit span {
+  scale: calc(var(--active, 0) + 0.5);
+  filter: blur(calc((1 - var(--active, 0)) * 1rem));
+  transition: scale calc(((1 - var(--active, 0)) + 0.2) * 1s), filter calc(((1 - var(--active, 0)) + 0.2) * 1s);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.digit:first-of-type {
+  padding-left: 3rem;
+}
+.digit:last-of-type {
+  padding-right: 3rem;
+}
+
+:root {
+  --lerp-0: 1; /* === sin(90deg) */
+  --lerp-1: calc(sin(50deg));
+  --lerp-2: calc(sin(45deg));
+  --lerp-3: calc(sin(35deg));
+  --lerp-4: calc(sin(25deg));
+  --lerp-5: calc(sin(15deg));
+}
+
+.digit:is(:hover, :focus-visible) {
+  --active: var(--lerp-0);
+}
+.digit:is(:hover, :focus-visible) + .digit,
+.digit:has(+ .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-1);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit,
+.digit:has(+ .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-2);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit + .digit,
+.digit:has(+ .digit + .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-3);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit + .digit + .digit,
+.digit:has(+ .digit + .digit + .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-4);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit + .digit + .digit + .digit,
+.digit:has(+ .digit + .digit + .digit + .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-5);
+}
+
+
     </style>
 </head>
 <body>
@@ -317,10 +580,66 @@
 
     <!-- Hauptinhalt -->
     <div class="content" style="margin">
-        <h1>SEO Agentur: <br>Google SEO & GPT SEO</h1>
+        <div class="fancyTitleBody">
+            <h1 class="fancy-wipe">
+            	SEO Agentur:
+            </h1>
+
+            <h1 class="fancy-wipe" style="--colors: linear-gradient(66deg, #3999f2, #FDE48B, #ff69af); --delay: 0.5s;">
+            	Google SEO
+            </h1>
+
+            <h1 class="fancy-wipe dank" style="--colors: linear-gradient(132deg, rgb(252, 96, 96) 0.00%, rgb(255, 171, 69) 20.00%, rgb(233, 252, 106) 40.00%, rgb(72, 247, 130) 60.00%, rgb(112, 151, 250) 80.00%, rgb(231, 110, 250) 100.00%); --delay: 1s;">
+            		& GPT SEO™️
+            </h1>
+        </div>
+
+
+
+
+        <!--<h1>SEO Agentur: <br>Google SEO & GPT SEO</h1>-->
             <p>I bi de Dani, und da sind mini SEO Projekt.</p>
-            <p>Wötsch uf Google <b>ohni Werbekoste</b> wiit ue? <br>Chönd mir gern zeme mache: Bitte alüte oder uf WhatsApp schriebe 076 281 85 82</p>
+            <p>Wötsch uf Google <b>ohni Werbekoste</b> wiit ue? <br>Chönd mir gern zeme mache! Bitte alüte oder uf WhatsApp schriebe:</p>
+
+            <section>
+              <ul class="code">
+                <li tabindex="0" class="digit">
+                  <span>0</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>7</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>6</span>
+                </li>
+                <li tabindex="0" class="digit"></li>
+                <li tabindex="0" class="digit">
+                  <span>2</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>8</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>1</span>
+                </li>
+                <li tabindex="0" class="digit"></li>
+                <li tabindex="0" class="digit">
+                  <span>8</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>5</span>
+                </li>
+                <li tabindex="0" class="digit"></li>
+                <li tabindex="0" class="digit">
+                  <span>8</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>2</span>
+                </li>
+              </ul>
+            </section>
     </div>
+
 
     <!-- Karten-Container -->
     <div class="grid-container">
@@ -444,7 +763,41 @@
             <li><strong>Pakete:</strong> Zur Kostenübersicht biete ich auch für kleine Unternehmen greifbare Preise durch einmalige Gesamtpakete.</li>
         </ul>
 
-        <p class="cta">Kontaktieren Sie mich jetzt: 076 281 85 82</p>
+        <p class="cta">Kontaktieren Sie mich jetzt:</p>
+        <section>
+              <ul class="code">
+                <li tabindex="0" class="digit">
+                  <span>0</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>7</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>6</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>2</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>8</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>1</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>8</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>5</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>8</span>
+                </li>
+                <li tabindex="0" class="digit">
+                  <span>2</span>
+                </li>
+              </ul>
+            </section>
     </div>
 
 </body>
@@ -458,7 +811,7 @@
   "name": "SEO Agentur | Google SEO & GPT SEO",
   "image": "/favicon.ico",
   "url": "https://tryotrix.github.io",
-  "telephone": "+41 76 281 85 82",
+  "telephone": "",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "",
@@ -493,4 +846,20 @@
     "name": "Schweiz"
   },
 }
+</script>
+
+<script>
+    [...document.querySelectorAll('.fancy-wipe')].forEach((el) => {
+	const text = el.innerText;
+	const classes = ['text','wipe-in','blur-in','blur-in-2'];
+	const els = classes.map((v) => {
+		const el = document.createElement('span');
+		el.innerText = text;
+		el.classList.add(v);
+		return el;
+	});
+	el.innerText = '';
+	el.classList.add('go');
+	els.forEach((v) => el.append(v));
+})
 </script>
