@@ -389,12 +389,12 @@
     	will-change: transform, opacity;
     }
 
-    .dank.fancy-wipe > span:nth-child(2) {
+    /*.dank.fancy-wipe > span:nth-child(2) {
     	background-image:  url(https://assets.codepen.io/13471/rainbow-sparkles.png), var(--colors);
     	background-size: 320px, cover;
     	background-blend-mode: multiply;
     	will-change: transform, opacity;
-    }
+    }*/
 
     .fancy-wipe > span:nth-child(3) {
     	position: absolute;
@@ -479,7 +479,7 @@
 
 
 article {
-  animation: spin 2.5s infinite linear paused;
+  animation: spin 2.5s infinite linear;
 
 
   background:
@@ -507,7 +507,9 @@ article {
   border-radius: 1rem;
   box-shadow: 0.125rem 0.25rem 0.25rem 0.5rem oklch(0.1 0.37 315 / 0.25);
   color: white;
+  font-weight: bold;
   padding: 1rem;
+  line-height: 1.1;
 
   & p {
       text-align: center;
@@ -555,12 +557,8 @@ article {
 
         <!--<h1>SEO Agentur: <br>Google SEO & GPT SEO</h1>-->
             <p>I bi de Dani, und da sind mini SEO Projekt.</p>
-            <p>Wötsch uf Google <b>ohni Werbekoste</b> wiit ue? <br>Chönd mir gern zeme mache! Bitte alüte oder uf WhatsApp schriebe:</p>
-            <article>
-            <p>
-              076 281 85 82
+            <p>Wötsch uf Google <b>ohni Werbekoste</b> wiit ue? <br>Machemer zeme! Bitte alüte oder uf WhatsApp schriebe: 076 281 85 82
             </p>
-          </article>
     </div>
 
 
@@ -688,7 +686,7 @@ article {
             <li><strong>Pakete:</strong> Zur Kostenübersicht biete ich auch für kleine Unternehmen greifbare Preise durch einmalige Gesamtpakete.</li>
         </ul>
 
-        <p class="cta">Kontaktieren Sie mich jetzt:  076 281 85 82</p>
+        <article style="font-size: 1.4em;">Kontaktieren Sie mich jetzt: 076 281 85 82</article>
     </div>
 
 </body>
