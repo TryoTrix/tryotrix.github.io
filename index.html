@@ -187,7 +187,10 @@
             background: linear-gradient(145deg, #3d3d3d, #505050);
             border-radius: 20px;
             position: relative;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            /*box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);*/
+            box-shadow: 
+                -5px -5px 10px rgba(255, 255, 255, 0.5), /* Heller Schatten oben und links */
+                inset 5px 5px 10px rgba(0, 0, 0, 0.5);        /* Dunkler Schatten unten und rechts */
             overflow: hidden;
         }
 
@@ -205,7 +208,7 @@
 
         .shiny-card-content {
             position: absolute;
-            top: 50%;
+            top: 41%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -259,8 +262,8 @@
         }*/
 
         p {
-            font-size: 1.4em;
-            //color: #f0f0f0;
+            font-size: 1.5em;
+            /*color: #f0f0f0;*/
             color: #404040;
 
         }
@@ -589,45 +592,49 @@ article {
 
         <!--<h1>SEO Agentur: <br>Google SEO & GPT SEO</h1>-->
             <p>Wötsch uf Google wiit ue? <br>Machemer zeme! Eifach alüte oder uf WhatsApp schriebe: 076 281 85 82</p>
-            <p>I bi de Dani und da sind mini SEO Projekt.</p>
+            <p>Online Suechi isch im Wandel. Isch dini Websiite ready?</p>
+            <p>I bi de <a href="https://ch.linkedin.com/in/daniel-g%C3%A4chter-2b3411158" style="background-color: transparent; color: #0075BE; padding: 0px; font-size: 1.0em;">Daniel Gächter</a> und da sind mini SEO Projekt. <br>Spoiler: I mach da nöd wells mir Spass macht, sondern welli extrem guet i dem bi. Spass machts aber au.</p>
     </div>
 
 
 
     <!-- Karten-Container -->
     <div class="grid-container">
-        <div class="shiny-card">
+        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
             <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/wil" target="_blank" style="display: block; text-decoration: none; background-color: #d11141;">
                 <div class="shiny-card-content">
-                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 10px; margin-top: 30px;">
+                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 2px; margin-top: 50px;">
                         <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Nachhilfe Wil Logo" style="width: 30px; height: auto; display: block;">
                     </div>
-
                     <h2>NACHHILFE WIL LOTUS ACADEMY</h2>
-                    <p style="color: #fff;">SEO Google/GPT: "Nachhilfe Wil"</p>
-                    <p style="color: #C7FFD0;">Google SEO Ranking: 1. Seite, Top 3</p>
+                    <p style="color: #C7FFD0; font-size: 1.0em;">Google SEO Ranking: 1. Seite, Top 3</p>
+                    <br><br>
                 </div>
             </a>
-            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/wil" target="_blank">
-                    <p style="color: #fff;">SEO Google/GPT: "Nachhilfe Wil"</p>
-
-            </a>
+            <p style="text-align: center; margin-top: 0px; color: white; font-size: 1.1em;">
+                <a href="https://www.google.com/search?q=Nachhilfe+Wil" target="_blank"
+                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO Agentur Resultate für:<br>"Nachhilfe Wil"<br>Google SEO</a>
+            </p>
         </div>
 
-        <div class="shiny-card">
+        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
             <a href="https://polygon-software.ch/" target="_blank" style="display: block; text-decoration: none; background-color: #f37735;">
-                <div class="shiny-card-content">
-                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 10px;">
+                <div class="shiny-card-content" style=" margin-bottom: 160px;">
+                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 2px; margin-top: 0px;">
                         <img src="https://polygon-software.ch/images/icon.svg" alt="Softwareentwicklung Logo" style="width: 30px; height: auto; display: block;">
                     </div>
                     <h2>POLYGON SOFTWARE</h2>
-                    <p>SEO Google/GPT: "Softwareentwicklung"</p>
                     <p style="color: #C7FFD0;">Google SEO Ranking: 1. Seite, Top 3</p>
                 </div>
             </a>
+            <p style="text-align: center; color: white; font-size: 1.1em;">
+                <a href="https://www.google.com/search?q=Softwareentwicklung" target="_blank"
+                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
+                    Agentur Resultate für:<br>"Softwareentwicklung"<br>Google SEO</a>
+            </p>
         </div>
 
-        <div class="shiny-card">
+        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
             <a href="https://nagelstudio-sg.ch/" target="_blank" style="display: block; text-decoration: none; background-color: #ffc425;">
                 <div class="shiny-card-content">
 
@@ -636,69 +643,89 @@ article {
                     </div>
 
                     <h2>NAGELSTUDIO ST. GALLEN</h2>
-                    <p>SEO Google/GPT: "Nagelstudio St. Gallen"</p>
                     <p style="color: #C7FFD0;">Google SEO Ranking: 1. Seite</p>
                     <p>Komplett neue Webseite seit Dez 2024</p>
 
                 </div>
             </a>
+            <p style="text-align: center; margin-top: 20px; color: white; font-size: 1.1em;">
+                <a href="https://www.google.com/search?q=Nagelstudio+St+Gallen" target="_blank"
+                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
+                    Agentur Resultate für:<br>"Nagelstudio St. Gallen"<br>Google SEO</a>
+            </p>
         </div>
 
 
-        <div class="shiny-card">
+        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
             <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/winterthur" target="_blank" style="display: block; text-decoration: none; background-color: #00b159;">
                 <div class="shiny-card-content">
-                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 0px; margin-top: 70px;">
+                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 0px; margin-top: 50px;">
                         <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Nachhilfe Winterthur Logo" style="width: 30px; height: auto; display: block;">
                     </div>
-                    <h2>NACHHILFE WINTERTHUR LOTUS ACADEMY</h2>
-                    <p>SEO Google/GPT: "Nachhilfe Winterthur"</p>
+                    <h2>NACHHILFE WINTERTHUR LOTUS</h2>
                     <p style="color: #C7FFD0;">Google SEO Ranking: 2. Seite</p>
                     <p>Frisch seit Nov 2024</p>
                 </div>
             </a>
+            <p style="text-align: center; margin-top: 20px; color: white; font-size: 1.1em;">
+                <a href="https://www.google.com/search?q=Nachhilfe+Winterthur" target="_blank"
+                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
+                    Agentur Resultate für:<br>"Nachhilfe Winterthur"<br>Google SEO</a>
+            </p>
         </div>
 
-        <div class="shiny-card">
+        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
             <a href="https://ayana-med.ch/med/tattoo/" target="_blank" style="display: block; text-decoration: none; background-color: #EF98BC;">
                 <div class="shiny-card-content">
                     <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 0px; margin-top: 40px;">
                         <img src="https://ayana-med.ch/favicon.ico" alt="Areola Tätowierung Logo" style="width: 30px; height: auto; display: block;">
                     </div>
                     <h2>AREOLA TÄTOWIERUNG AYANA-MED</h2>
-                    <p>SEO Google/GPT: "Areola Tätowierung"</p>
                     <p style="color: #C7FFD0;">Google SEO Ranking: 1. Seite, Top 3</p>
                 </div>
             </a>
+            <p style="text-align: center; margin-top: 20px; color: white; font-size: 1.1em;">
+                <a href="https://www.google.com/search?q=Areola+Tätowierung" target="_blank"
+                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
+                    Agentur Resultate für:<br>"Areola Tätowierung"<br>Google SEO</a>
+            </p>
         </div>
 
 
-        <div class="shiny-card">
+        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
             <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/stgallen" target="_blank" style="display: block; text-decoration: none; background-color: #00aedb;">
                 <div class="shiny-card-content">
                     <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 0px; margin-top: 10px;">
                         <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Nachhilfe St. Gallen Logo" style="width: 30px; height: auto; display: block;">
                     </div>
-                    <h2>NACHHILFE ST. GALLEN LOTUS ACADEMY</h2>
-                    <p>SEO Google/GPT: "Nachhilfe St. Gallen"</p>
+                    <h2>NACHHILFE ST. GALLEN LOTUS</h2>
                     <p style="color: #C7FFD0;">Google SEO Ranking: 1. Seite, Top 3</p>
                 </div>
             </a>
+            <p style="text-align: center; margin-top: 20px; color: white; font-size: 1.1em;">
+                <a href="https://www.google.com/search?q=Nachhilfe+St+Gallen" target="_blank"
+                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
+                    Agentur Resultate für:<br>"Nachhilfe St. Gallen"<br>Google SEO</a>
+            </p>
         </div>
 
 
 
-        <div class="shiny-card">
+        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
             <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/frauenfeld" target="_blank" style="display: block; text-decoration: none; background-color: #26B09D;">
                 <div class="shiny-card-content">
                     <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 0px; margin-top: 40px;">
                         <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Nachhilfe Frauenfeld Logo" style="width: 30px; height: auto; display: block;">
                     </div>
-                    <h2>NACHHILFE FRAUENFELD LOTUS ACADEMY</h2>
-                    <p>SEO Google/GPT: "Nachhilfe Frauenfeld"</p>
+                    <h2>NACHHILFE FRAUENFELD LOTUS</h2>
                     <p style="color: #C7FFD0;">Google SEO Ranking: 1. Seite, Top 3</p>
                 </div>
             </a>
+            <p style="text-align: center; margin-top: 20px; color: white; font-size: 1.1em;">
+                <a href="https://www.google.com/search?q=Nachhilfe+Frauenfeld" target="_blank"
+                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
+                    Agentur Resultate für:<br>"Nachhilfe Frauenfeld"<br>Google SEO</a>
+            </p>
         </div>
 
 
