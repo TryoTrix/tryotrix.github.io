@@ -451,8 +451,8 @@
     const ctx = canvas.getContext('2d');
 
     // Cache dimensions to avoid repeated reflows
-    let canvasWidth = window.innerWidth;
-    let canvasHeight = window.innerHeight;
+    let canvasWidth = 0;
+    let canvasHeight = 0;
 
     function resizeCanvas() {
         canvasWidth = window.innerWidth;
@@ -460,7 +460,9 @@
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
     }
-    resizeCanvas();
+
+    // Defer initial measurement to avoid layout thrashing
+    requestAnimationFrame(resizeCanvas);
 
     // Debounced resize handler
     let resizeTimeout;
@@ -524,13 +526,22 @@
         }
     }
 
-    const stars = Array.from({ length: 80 }, () => new Star());
-    // Distribute initial positions
-    stars.forEach((star, i) => {
-        star.y = Math.random() * canvasHeight;
-    });
+    let stars = [];
+    let starsInitialized = false;
+
+    function initStars() {
+        if (starsInitialized || canvasWidth === 0) return;
+        stars = Array.from({ length: 80 }, () => new Star());
+        stars.forEach((star) => {
+            star.y = Math.random() * canvasHeight;
+        });
+        starsInitialized = true;
+    }
 
     function animateStars(timestamp) {
+        if (!starsInitialized) {
+            initStars();
+        }
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
         stars.forEach(star => {
@@ -548,7 +559,7 @@
     const heroCtx = heroCanvas.getContext('2d');
 
     // Cache hero canvas dimensions
-    let heroWidth, heroHeight;
+    let heroWidth = 0, heroHeight = 0;
     function resizeHeroCanvas() {
         const rect = heroCanvas.parentElement.getBoundingClientRect();
         heroWidth = rect.width;
@@ -556,7 +567,9 @@
         heroCanvas.width = heroWidth;
         heroCanvas.height = heroHeight;
     }
-    resizeHeroCanvas();
+
+    // Defer initial measurement to avoid layout thrashing
+    requestAnimationFrame(resizeHeroCanvas);
 
     // Debounced resize for hero canvas
     let heroResizeTimeout;
@@ -623,12 +636,22 @@
         }
     }
 
-    let heroStars = Array.from({ length: 30 }, () => new HeroStar(heroWidth, heroHeight));
-    heroStars.forEach(star => {
-        star.y = Math.random() * heroHeight;
-    });
+    let heroStars = [];
+    let heroStarsInitialized = false;
+
+    function initHeroStars() {
+        if (heroStarsInitialized || heroWidth === 0) return;
+        heroStars = Array.from({ length: 30 }, () => new HeroStar(heroWidth, heroHeight));
+        heroStars.forEach(star => {
+            star.y = Math.random() * heroHeight;
+        });
+        heroStarsInitialized = true;
+    }
 
     function animateHeroStars(timestamp) {
+        if (!heroStarsInitialized) {
+            initHeroStars();
+        }
         heroCtx.clearRect(0, 0, heroWidth, heroHeight);
 
         heroStars.forEach(star => {
