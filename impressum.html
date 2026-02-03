@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Impressum - SEO Agentur Schweiz von Daniel Gächter">
+    <meta name="robots" content="noindex, follow">
+    <title>Impressum | SEO Agentur Schweiz</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="neon-orb"></div>
+        <div class="neon-orb"></div>
+        <div class="neon-orb"></div>
+    </div>
+
+    <!-- Scanlines Overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Legal Page Content -->
+    <section class="legal-page">
+        <div class="glass-panel legal-content hud-brackets glow-card">
+            <div class="glow-blob"></div>
+            <div class="glow-target"></div>
+            <span class="bracket-bl"></span>
+            <span class="bracket-br"></span>
+
+            <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
+
+            <h1>Impressum</h1>
+
+            <div class="legal-section">
+                <h2>Kontaktadresse</h2>
+                <p>
+                    Daniel Gächter<br>
+                    SEO Agentur Schweiz<br>
+                    Oberstadtstrasse 9<br>
+                    8500 Frauenfeld<br>
+                    Schweiz
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>Kontakt</h2>
+                <p>
+                    Telefon: <span class="phone-display-legal">Laden...</span><br>
+                    WhatsApp: <a href="#" class="legal-wa">Nachricht senden</a>
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>Vertretungsberechtigte Person</h2>
+                <p>Daniel Gächter, Inhaber</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>Haftungsausschluss</h2>
+                <p>Der Autor übernimmt keine Gewähr für die Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen.</p>
+                <p>Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, die aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.</p>
+                <p>Alle Angebote sind freibleibend. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>Haftungsausschluss für Links</h2>
+                <p>Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des jeweiligen Nutzers.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>Urheberrechte</h2>
+                <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich Daniel Gächter oder den speziell genannten Rechteinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung des Urheberrechtsträgers im Voraus einzuholen.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hud-footer">
+        <div class="footer-content">
+            <p class="footer-text">
+                &copy; 2026 Daniel Gächter | SEO Agentur Schweiz
+            </p>
+        </div>
+    </footer>
+
+    <script>
+    // Phone number protection
+    (function() {
+        const p = ['\x30','\x37','\x36','\x20','\x32','\x38','\x31','\x20','\x38','\x35','\x20','\x38','\x32'];
+        const c = ['\x34','\x31','\x37','\x36','\x32','\x38','\x31','\x38','\x35','\x38','\x32'];
+        const d = function(a) { return a.join(''); };
+        const phoneDisplay = d(p);
+        const phoneClean = d(c);
+
+        document.querySelectorAll('.phone-display-legal').forEach(function(el) {
+            el.textContent = phoneDisplay;
+        });
+
+        const waLink = document.querySelector('.legal-wa');
+        if (waLink) {
+            waLink.href = 'https://' + 'wa' + '.me/' + phoneClean;
+        }
+    })();
+
+    // Glow effect
+    if (!('ontouchstart' in window)) {
+        const cards = document.querySelectorAll('.glow-card');
+        window.addEventListener('mousemove', (e) => {
+            cards.forEach(card => {
+                const blob = card.querySelector('.glow-blob');
+                if (!blob) return;
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - 125;
+                const y = e.clientY - rect.top - 125;
+                blob.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    }
+    </script>
+</body>
+</html>

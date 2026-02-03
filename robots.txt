@@ -1,0 +1,10 @@
+# robots.txt for tryotrix.github.io
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tryotrix.github.io/sitemap.xml
+
+# Disallow admin/template files
+Disallow: /og-template.html
