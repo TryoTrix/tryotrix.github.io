@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>OG Image Template - Screenshot this!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1200px;
+            height: 630px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .og-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a0a2e 50%, #0f1a2e 100%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+        }
+
+        /* Animated gradient orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #00f0ff 0%, transparent 70%);
+            top: -100px;
+            left: -100px;
+        }
+
+        .orb-2 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, #ff00aa 0%, transparent 70%);
+            bottom: -80px;
+            right: -80px;
+        }
+
+        .orb-3 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, #ffaa00 0%, transparent 70%);
+            top: 50%;
+            right: 20%;
+            opacity: 0.4;
+        }
+
+        /* Content card */
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 50px 70px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            backdrop-filter: blur(20px);
+        }
+
+        /* HUD Brackets */
+        .card::before,
+        .card::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-color: #00f0ff;
+            border-style: solid;
+            border-width: 0;
+        }
+
+        .card::before {
+            top: -8px;
+            left: -8px;
+            border-top-width: 3px;
+            border-left-width: 3px;
+        }
+
+        .card::after {
+            top: -8px;
+            right: -8px;
+            border-top-width: 3px;
+            border-right-width: 3px;
+        }
+
+        .bracket-bl,
+        .bracket-br {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-color: #00f0ff;
+            border-style: solid;
+            border-width: 0;
+        }
+
+        .bracket-bl {
+            bottom: -8px;
+            left: -8px;
+            border-bottom-width: 3px;
+            border-left-width: 3px;
+        }
+
+        .bracket-br {
+            bottom: -8px;
+            right: -8px;
+            border-bottom-width: 3px;
+            border-right-width: 3px;
+        }
+
+        .title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #00f0ff, #ff00aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 24px;
+            color: #808090;
+            margin-bottom: 35px;
+        }
+
+        .tagline {
+            font-size: 22px;
+            color: #e0e0e0;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        .highlight {
+            color: #00f0ff;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, rgba(255, 170, 0, 0.2), rgba(255, 100, 0, 0.2));
+            border: 2px solid #ffaa00;
+            border-radius: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffaa00;
+            letter-spacing: 0.1em;
+        }
+
+        /* Corner decoration */
+        .url {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            color: #606070;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="og-container">
+        <!-- Background orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <!-- Content card -->
+        <div class="card">
+            <span class="bracket-bl"></span>
+            <span class="bracket-br"></span>
+
+            <h1 class="title">SEO Agentur Schweiz</h1>
+            <p class="subtitle">Google SEO & GPT SEO</p>
+            <p class="tagline">
+                Nachweisbare <span class="highlight">Top-Rankings</span> zu fairen Preisen.<br>
+                Workshops, Beratung und Full-Service für KMUs.
+            </p>
+            <span class="badge">RANG #1 ERGEBNISSE</span>
+        </div>
+
+        <!-- URL -->
+        <span class="url">tryotrix.github.io</span>
+    </div>
+</body>
+</html>

@@ -1396,11 +1396,12 @@ h3 {
 
 .footer-text a {
   color: var(--neon-cyan);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .footer-text a:hover {
-  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 .footer-links {

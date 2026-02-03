@@ -27,12 +27,30 @@
     <meta name="twitter:description" content="Professionelle Suchmaschinenoptimierung für Google & GPT. Nachweisbare Top-Rankings zu fairen Preisen.">
     <meta name="twitter:image" content="https://tryotrix.github.io/og-image.jpg">
 
-    <!-- Google Fonts -->
+    <!-- Critical CSS (inline for fast first paint) -->
+    <style>
+        :root{--bg-dark:#0a0a0f;--neon-cyan:#00f0ff;--neon-magenta:#ff00aa;--text-primary:#e0e0e0;--text-secondary:#808090}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#0a0a0f;color:#e0e0e0;line-height:1.6;min-height:100vh;overflow-x:hidden}
+        .ambient-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:#0a0a0f}
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+        .glass-panel{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;backdrop-filter:blur(20px);position:relative;overflow:hidden}
+        .hero-content{text-align:center;padding:clamp(40px,8vw,80px);max-width:800px}
+        h1,h2,h3{font-weight:700;letter-spacing:0.05em;text-transform:uppercase}
+        h1{font-size:clamp(2rem,6vw,4rem)}
+        .hero-title{margin-bottom:0.5em;background:linear-gradient(135deg,#00f0ff,#ff00aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    </style>
+
+    <!-- Google Fonts (async, non-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Stylesheet -->
+    <!-- Stylesheet (preload for faster loading) -->
+    <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -428,16 +446,28 @@
 
     <!-- Scroll Reveal & Glow Effect Scripts -->
     <script>
-    // Rising Stars Canvas Animation
+    // Rising Stars Canvas Animation (optimized to avoid layout thrashing)
     const canvas = document.getElementById('starCanvas');
     const ctx = canvas.getContext('2d');
 
+    // Cache dimensions to avoid repeated reflows
+    let canvasWidth = window.innerWidth;
+    let canvasHeight = window.innerHeight;
+
     function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvasWidth = window.innerWidth;
+        canvasHeight = window.innerHeight;
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
     }
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+
+    // Debounced resize handler
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(resizeCanvas, 100);
+    });
 
     class Star {
         constructor() {
@@ -445,8 +475,8 @@
         }
 
         reset() {
-            this.x = Math.random() * canvas.width;
-            this.y = canvas.height + 10;
+            this.x = Math.random() * canvasWidth;
+            this.y = canvasHeight + 10;
             this.size = Math.random() * 2 + 1;
             this.speed = Math.random() * 1 + 0.5;
             this.opacity = Math.random() * 0.5 + 0.3;
@@ -468,7 +498,7 @@
         update(timestamp) {
             this.y -= this.speed;
 
-            if (!this.fadeStart && this.y < canvas.height * 0.7) {
+            if (!this.fadeStart && this.y < canvasHeight * 0.7) {
                 this.fadeStart = timestamp;
             }
 
@@ -497,11 +527,11 @@
     const stars = Array.from({ length: 80 }, () => new Star());
     // Distribute initial positions
     stars.forEach((star, i) => {
-        star.y = Math.random() * canvas.height;
+        star.y = Math.random() * canvasHeight;
     });
 
     function animateStars(timestamp) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
         stars.forEach(star => {
             star.update(timestamp);
@@ -517,13 +547,23 @@
     const heroCanvas = document.getElementById('heroStarCanvas');
     const heroCtx = heroCanvas.getContext('2d');
 
+    // Cache hero canvas dimensions
+    let heroWidth, heroHeight;
     function resizeHeroCanvas() {
         const rect = heroCanvas.parentElement.getBoundingClientRect();
-        heroCanvas.width = rect.width;
-        heroCanvas.height = rect.height;
+        heroWidth = rect.width;
+        heroHeight = rect.height;
+        heroCanvas.width = heroWidth;
+        heroCanvas.height = heroHeight;
     }
     resizeHeroCanvas();
-    window.addEventListener('resize', resizeHeroCanvas);
+
+    // Debounced resize for hero canvas
+    let heroResizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(heroResizeTimeout);
+        heroResizeTimeout = setTimeout(resizeHeroCanvas, 100);
+    });
 
     class HeroStar {
         constructor(canvasWidth, canvasHeight) {
@@ -567,8 +607,8 @@
             }
 
             if (this.y < -5 || this.opacity <= 0) {
-                this.canvasWidth = heroCanvas.width;
-                this.canvasHeight = heroCanvas.height;
+                this.canvasWidth = heroWidth;
+                this.canvasHeight = heroHeight;
                 this.reset();
             }
         }
@@ -583,16 +623,16 @@
         }
     }
 
-    let heroStars = Array.from({ length: 30 }, () => new HeroStar(heroCanvas.width, heroCanvas.height));
+    let heroStars = Array.from({ length: 30 }, () => new HeroStar(heroWidth, heroHeight));
     heroStars.forEach(star => {
-        star.y = Math.random() * heroCanvas.height;
+        star.y = Math.random() * heroHeight;
     });
 
     function animateHeroStars(timestamp) {
-        heroCtx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+        heroCtx.clearRect(0, 0, heroWidth, heroHeight);
 
         heroStars.forEach(star => {
-            star.update(timestamp, heroCanvas.height);
+            star.update(timestamp, heroHeight);
             star.draw(heroCtx);
         });
 
