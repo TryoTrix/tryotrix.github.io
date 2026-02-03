@@ -1,837 +1,555 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SEO Agentur für Google & GPT SEO in der Schweiz. Professionelle Suchmaschinenoptimierung zu fairen Preisen. Workshops, Beratung, Umsetzung und Full-Service für KMUs. Jetzt Kontakt aufnehmen!">
-    <meta name="keywords" content="SEO Agentur, SEO Schweiz, SEO Agentur Schweiz, Google SEO, GPT SEO, Suchmaschinenoptimierung, SEO Beratung, SEO Kosten, SEO Workshop, SEO Umsetzung, Full-Service SEO, KMU SEO">
-    <title>SEO Agentur Schweiz Google & GPT SEO</title>
-    <style>
-
-        @font-face {
-          font-family: 'Montserrat';
-          src: url('/fonts/Montserrat-Black.woff2') format('woff2');
-          font-weight: 500;
-          font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Lato';
-            src: url('/fonts/Lato-Regular.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Lato', sans-serif;
-            text-color: #333333;
-            //background: linear-gradient(120deg, #0075BE, #cfd9df);
-            //background: linear-gradient(120deg, #5FFC71, #C7FFD0);
-
-            overflow-y: auto;
-                height: 100%; /* Stelle sicher, dass die Seite tatsächlich 100% Höhe hat */
-
-        }
-
-        .fancyTitleBody {
-        	font-family: Raleway, sans-serif;
-        	line-height: 1.3;
-        	display: flex;
-        	flex-direction: column;
-        	justify-content: space-around;
-        	align-items: center;
-        }
-
-        .fancyTitleBody h1.fancy-wipe {
-          margin: 0px;
-          position: relative;
-          display: inline-block;  /* Beide Schichten übereinander */
-          text-align: center;     /* Text zentrieren */
-        }
-
-        /* Hintergrundkreise */
-        .background {
-            background-color: #f4f3f2;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            animation: moveRect infinite linear;
-        }
-
-        .circle:nth-child(1) {
-            width: 200px;
-            height: 200px;
-            animation-duration: 12s;
-            animation-delay: 0s;
-        }
-
-        .circle:nth-child(2) {
-            width: 150px;
-            height: 150px;
-            animation-duration: 10s;
-            animation-delay: 2s;
-        }
-
-        .circle:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            animation-duration: 8s;
-            animation-delay: 1s;
-        }
-
-        .circle:nth-child(4) {
-            width: 250px;
-            height: 250px;
-            animation-duration: 15s;
-            animation-delay: 3s;
-        }
-
-        @keyframes moveRect {
-            0% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(80vw, -10vh); /* Adjusted to allow circles to go beyond the bottom */
-            }
-            50% {
-                transform: translate(80vw, 100vh); /* Updated to extend fully below the viewport */
-            }
-            75% {
-                transform: translate(0, 100vh); /* Updated for consistency */
-            }
-            100% {
-                transform: translate(0, 0);
-            }
-        }
-
-
-        .circle-diag {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(5px);
-            animation: moveDiag infinite linear;
-        }
-
-        .circle-diag:nth-child(5) {
-            width: 120px;
-            height: 120px;
-            animation-duration: 11s;
-            animation-delay: 0s;
-        }
-
-        .circle-diag:nth-child(6) {
-            width: 180px;
-            height: 180px;
-            animation-duration: 14s;
-            animation-delay: 3s;
-        }
-
-        .circle-diag:nth-child(7) {
-            width: 140px;
-            height: 140px;
-            animation-duration: 10s;
-            animation-delay: 2s;
-        }
-
-        @keyframes moveDiag {
-            0% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(90vw, 100vh); /* Updated to extend fully below the viewport */
-            }
-            50% {
-                transform: translate(0, 100vh); /* Updated for consistency */
-            }
-            75% {
-                transform: translate(90vw, -10vh); /* Adjusted for diagonal movement */
-            }
-            100% {
-                transform: translate(0, 0);
-            }
-        }
-
-
-
-        /* Grid-Container für die Karten */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Karten im Grid */
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-
-        /* Glänzende Karte */
-        .shiny-card {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(145deg, #3d3d3d, #505050);
-            border-radius: 20px;
-            position: relative;
-            /*box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);*/
-            box-shadow: 
-                -5px -5px 10px rgba(255, 255, 255, 0.5), /* Heller Schatten oben und links */
-                inset 5px 5px 10px rgba(0, 0, 0, 0.5);        /* Dunkler Schatten unten und rechts */
-            overflow: hidden;
-        }
-
-        .shiny-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transform: rotate(45deg);
-            animation: shine 16s infinite;
-        }
-
-        .shiny-card-content {
-            position: absolute;
-            top: 41%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-        }
-
-        .shiny-card-content h2 {
-            font-size: 1.5rem;
-            font-family: 'Montserrat';
-            font-weight: bold;
-        }
-
-        .shiny-card-content p {
-            font-size: 1rem;
-            color: #ccc;
-
-        }
-
-
-        @keyframes shine {
-            0% {
-                transform: rotate(45deg) translate(-150%, -150%);
-            }
-            100% {
-                transform: rotate(45deg) translate(150%, 150%);
-            }
-        }
-
-        .content {
-            position: relative;
-            align-items: center;
-            max-width: 90%;
-            margin: 0 auto;
-            text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            margin-top: 120px;
-            margin-bottom: 60px;
-        }
-
-        /*h1 {
-            text-align: center;
-            margin: 20px;
-            font-size: 2em;
-            //color: #fff;
-            color: #404040;
-            font-family: 'Montserrat';
-        }*/
-
-        p {
-            font-size: 1.5em;
-            /*color: #f0f0f0;*/
-            color: #404040;
-
-        }
-
-        a {
-            display: inline-block;
-            text-decoration: none;
-            color: white;
-            font-size: 1.1em;
-            background: #0075BE;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .content-section {
-        padding: 40px 20px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        max-width: 800px;
-        margin: 40px auto;
-        text-align: center;
-        color: #404040;
-    }
-
-    .content-section h2, .content-section h3 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: bold;
-        color: #333333;
-        margin-bottom: 20px;
-    }
-
-    .content-section p {
-        font-size: 1.2em;
-        color: #333333;
-        line-height: 1.6;
-    }
-
-    /* Stil für die Liste */
-    .content-section ul {
-        list-style: none;
-        padding: 0;
-        text-align: left;
-        margin-top: 20px;
-    }
-
-    .content-section ul li {
-        background: rgba(0, 117, 190, 0.1);
-        border: 1px solid rgba(0, 117, 190, 0.3);
-        border-radius: 10px;
-        margin-bottom: 15px;
-        padding: 15px;
-        font-size: 1.1em;
-        line-height: 1.5;
-        color: #404040;
-    }
-
-    .content-section ul li strong {
-        display: block;
-        font-size: 1.2em;
-        margin-bottom: 5px;
-        color: #0000EE;
-    }
-
-    /* Call-to-Action */
-    .content-section .cta {
-        margin-top: 50px;
-        font-size: 1.4em;
-        color: #0075BE;
-        font-weight: bold;
-    }
-
-
-	.fancy-wipe {
-    opacity: 0;
-    margin: 0;
-    font-weight: 900;
-    font-size: clamp(2rem, 8vw, 4rem); /* Responsive font size with a max limit */
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    --duration: 8s;
-    --delay: 0s;
-    --easing: ease-out;
-    --colors: linear-gradient(
-        45deg,
-        #2C88DD,
-        #B75BFF
-    );
-}
-
-
-    }
-
-    .fancy-wipe > span {
-      width: max-content;      /* Passt sich der Textbreite an */
-      text-align: center;
-      padding: 0.5rem;
-      margin: 0;              /* Keine zusätzliche Verschiebung */
-      box-sizing: border-box;
-    }
-
-    .fancy-wipe.go {
-    	opacity: 1;
-    	transition: all 2s ease;
-
-    }
-
-    .fancy-wipe > span:nth-child(1) {
-    	display: block;
-    	padding: 2rem;
-    	color: #404040; /*Titelfarbe Hintergrund*/
-    	animation: wipe-in var(--duration) infinite var(--easing) var(--delay) both;
-    	mask: linear-gradient(to right, black 50%, transparent 50%);
-    	mask-size: 400% 100%;
-    	mask-position: 100% 0%;
-    	mask-repeat: no-repeat;
-    	opacity: 1;
-    	will-change: transform, opacity;
-
-    	 /* optional: text-align: center; */
-    }
-
-    .fancy-wipe > span:nth-child(2) {
-    	position: absolute;
-    	left: 0;
-    	top: 0;
-    	width: 100%;
-    	height: 100%;
-    	padding: 2rem;
-    	background-image: var(--colors);
-    	-webkit-background-clip: text;
-    	-webkit-text-fill-color: transparent;
-    	animation: wipe-in var(--duration) infinite var(--easing) var(--delay) both;
-    	mask: linear-gradient(to right, transparent 25%, black 38%,  black 60%, transparent 66.7%);
-    	mask-size: 400% 100%;
-    	mask-position: 100% 0%;
-    	mask-repeat: no-repeat;
-    	opacity: 1;
-    	will-change: transform, opacity;
-    }
-
-    .dank.fancy-wipe > span:nth-child(2) {
-    	background-image:  url(https://assets.codepen.io/13471/rainbow-sparkles.png), var(--colors);
-    	background-size: 320px, cover;
-    	background-blend-mode: multiply;
-    	will-change: transform, opacity;
-    }
-
-    .fancy-wipe > span:nth-child(3) {
-    	position: absolute;
-    	left: 0;
-    	top: 0;
-    	width: 100%;
-    	height: 100%;
-    	padding: 2rem;
-    	background-image: var(--colors);
-    	-webkit-background-clip: text;
-    	-webkit-text-fill-color: transparent;
-    	animation: wipe-in var(--duration) infinite var(--easing) var(--delay) both;
-    	filter: blur(10px) brightness(1.3) contrast(1.2) saturate(1.2);
-    	mask: linear-gradient(to right, transparent 33%, black 60%, transparent 75%);
-    	mask-size: 400% 100%;
-    	mask-position: 100% 0%;
-    	mask-repeat: no-repeat;
-    	mix-blend-mode: plus-lighter;
-    	opacity: 1;
-    	will-change: transform, opacity;
-    }
-
-    .fancy-wipe > span:nth-child(4) {
-    	position: absolute;
-    	left: 0;
-    	top: 0;
-    	width: 100%;
-    	height: 100%;
-    	padding: 2rem;
-    	background-image: var(--colors);
-    	-webkit-background-clip: text;
-    	-webkit-text-fill-color: transparent;
-    	animation: wipe-in var(--duration) infinite var(--easing) var(--delay) both;
-    	filter: blur(12px) brightness(1.1) contrast(1.1) saturate(1.1);
-    	mask: linear-gradient(to right, transparent 50%, black 66%, transparent 75%);
-    	mask-size: 400% 100%;
-    	mask-position: 100% 0%;
-    	mask-repeat: no-repeat;
-    	mix-blend-mode: plus-lighter;
-    	opacity: 1;
-    	will-change: transform, opacity;
-    }
-
-    @keyframes wipe-in {
-    	0% {
-    		mask-position: 100% 0%;
-    	}
-    	0%, 39.99% {
-    		animation-timing-function: var(--easing);
-    	}
-    	40%, 100% {
-    		mask-position: 0% 0%;
-    		animation-timing-function: linear;
-    	}
-    	5%, 66% {
-    		opacity: 1;
-    	}
-    	0%, 90%, 100% {
-    		opacity: 0;
-    	}
-    }
-
-
-
-    * {
-  box-sizing: border-box;
-}
-
-
-@property --bg-angle {
-  inherits: false;
-  initial-value: 0deg;
-  syntax: "<angle>";
-}
-
-
-@keyframes spin {
-  to {
-    --bg-angle: 360deg;
-  }
-}
-
-
-article {
-  animation: spin 2.5s infinite linear;
-
-
-  background:
-    linear-gradient(
-        to bottom,
-        oklch(0.1 0.2 240 / 0.95),
-        oklch(0.1 0.2 240 / 0.95)
-      )
-      padding-box,
-    conic-gradient(
-        from var(--bg-angle) in oklch longer hue,
-        oklch(0.85 0.37 0) 0 0
-      )
-      border-box;
-
-  border: 6px solid transparent;
-
-  &:hover {
-    animation-play-state: running;
-  }
-}
-
-
-article {
-  border-radius: 1rem;
-  box-shadow: 0.125rem 0.25rem 0.25rem 0.5rem oklch(0.1 0.37 315 / 0.25);
-  color: white;
-  font-weight: bold;
-  padding: 1rem;
-  line-height: 1.1;
-
-  & p {
-      text-align: center;
-      font-weight: bold;
-      color: white;
-      line-height: 1.1;
-    margin: 0rem 0 0;
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  .fancy-wipe {
-    animation: none !important; /* Animationen deaktivieren */
-    opacity: 1; /* Sichtbar machen */
-  }
-
-  .fancy-wipe > span {
-    display: none; /* Zusätzliche Animationselemente entfernen */
-    font-family: 'Montserrat';
-  }
-}
-
-
-
-
-
-    </style>
+    <meta name="description" content="SEO Agentur Schweiz - Professionelle Suchmaschinenoptimierung für Google & GPT. Nachweisbare Top-Rankings zu fairen Preisen. Workshops, Beratung und Full-Service für KMUs.">
+    <meta name="keywords" content="SEO Agentur, SEO Schweiz, SEO Agentur Schweiz, Google SEO, GPT SEO, Suchmaschinenoptimierung, SEO Beratung, SEO Kosten, SEO Workshop">
+    <title>SEO Agentur Schweiz | Google & GPT SEO</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Hintergrundkreise -->
-    <div class="background">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle-diag"></div>
-        <div class="circle-diag"></div>
-        <div class="circle-diag"></div>
-
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="neon-orb"></div>
+        <div class="neon-orb"></div>
+        <div class="neon-orb"></div>
+        <canvas id="starCanvas"></canvas>
     </div>
 
-    <!-- Hauptinhalt -->
-    <div class="content" style="margin">
-        <div class="fancyTitleBody">
-            <h1 class="fancy-wipe">
-            	SEO AGENTUR SCHWEIZ
-            </h1>
+    <!-- Scanlines Overlay -->
+    <div class="scanlines"></div>
 
-            <h1 class="fancy-wipe" style="--colors: linear-gradient(66deg, #3999f2, #FDE48B, #ff69af); --delay: 0.5s;">
-            	GOOGLE SEO
-            </h1>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="glass-panel hero-content hud-brackets glow-card">
+            <div class="glow-blob"></div>
+            <div class="glow-target"></div>
+            <canvas id="heroStarCanvas"></canvas>
+            <span class="bracket-bl"></span>
+            <span class="bracket-br"></span>
 
-            <h1 class="fancy-wipe dank" style="--colors: linear-gradient(132deg, rgb(252, 96, 96) 0.00%, rgb(255, 171, 69) 20.00%, rgb(233, 252, 106) 40.00%, rgb(72, 247, 130) 60.00%, rgb(112, 151, 250) 80.00%, rgb(231, 110, 250) 100.00%); --delay: 1s;">
-            		& GPT SEO<!--™️-->
-            </h1>
+            <h1 class="hero-title">SEO Agentur Schweiz</h1>
+            <p class="hero-subtitle">Google SEO & GPT SEO</p>
+            <p class="hero-tagline">
+                Deine Website auf Seite 1. Nachweisbar.<br>
+                Ich bin <a href="https://ch.linkedin.com/in/daniel-g%C3%A4chter-2b3411158" target="_blank" rel="noopener">Daniel Gächter</a> – SEO-Experte mit bewiesenen Rankings.
+            </p>
+            <a href="#contact" class="cta-button">Projekt besprechen</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-header scroll-reveal">
+            <h2>Bewiesene Rankings</h2>
+            <p class="mono">// Meine SEO-Projekte mit verifizierbaren Ergebnissen</p>
         </div>
 
-
-
-
-        <!--<h1>SEO Agentur: <br>Google SEO & GPT SEO</h1>-->
-            <p>Wötsch uf Google wiit ue? <br>Machemer zeme! Eifach alüte oder uf WhatsApp schriebe: 076 281 85 82</p>
-            <p>Online Suechi isch im Wandel. Isch dini Websiite ready?</p>
-            <p>I bi de <a href="https://ch.linkedin.com/in/daniel-g%C3%A4chter-2b3411158" style="background-color: transparent; color: #0075BE; padding: 0px; font-size: 1.0em;">Daniel Gächter</a> und da sind mini SEO Projekt. <br>Spoiler: I mach da nöd wells mir Spass macht, sondern welli hochgradig effektiv i dem bi. Spass machts aber au.</p>
-    </div>
-
-
-
-    <!-- Karten-Container -->
-    <div class="grid-container">
-        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/wil" target="_blank" style="display: block; text-decoration: none; background-color: #d11141;">
-                <div class="shiny-card-content">
-                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 2px; margin-top: 50px;">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Nachhilfe Wil Logo" style="width: 30px; height: auto; display: block;">
+        <div class="project-grid">
+            <!-- Project 1: Nachhilfe Wil -->
+            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/wil" target="_blank" rel="noopener" class="project-card">
+                <div class="glow-blob"></div>
+                <div class="glow-target"></div>
+                <div class="project-card-inner">
+                    <div class="project-icon">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
                     </div>
-                    <h2>NACHHILFE WIL LOTUS ACADEMY</h2>
-                    <p style="color: #C7FFD0;">Google SEO Ranking:<br>1. Seite, Top 3</p>
-                    <br><br>
+                    <h3>Nachhilfe Wil - Lotus Academy</h3>
+                    <p class="project-keyword">"Nachhilfe Wil"</p>
+                    <span class="ranking-badge top-3">Top 3, Seite 1</span>
                 </div>
             </a>
-            <p style="text-align: center; color: white; font-size: 0.9em; letter-spacing: -0.007em;">
-                <a href="https://www.google.com/search?q=Nachhilfe+Wil" target="_blank"
-                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO Agentur Resultate für:<br>"Nachhilfe Wil"<br>Google SEO</a>
-            </p>
-        </div>
 
-        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-            <a href="https://polygon-software.ch/" target="_blank" style="display: block; text-decoration: none; background-color: #f37735;">
-                <div class="shiny-card-content" style=" margin-bottom: 160px;">
-                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 2px; margin-top: 0px;">
-                        <img src="https://polygon-software.ch/images/icon.svg" alt="Softwareentwicklung Logo" style="width: 30px; height: auto; display: block;">
+            <!-- Project 2: Polygon Software -->
+            <a href="https://polygon-software.ch/" target="_blank" rel="noopener" class="project-card">
+                <div class="glow-blob"></div>
+                <div class="glow-target"></div>
+                <div class="project-card-inner">
+                    <div class="project-icon">
+                        <img src="https://polygon-software.ch/images/icon.svg" alt="Polygon Software" loading="lazy">
                     </div>
-                    <h2>POLYGON SOFTWARE</h2>
-                    <p style="color: #C7FFD0;">Google SEO Ranking:<br>1. Seite, Top 3</p>
+                    <h3>Polygon Software</h3>
+                    <p class="project-keyword">"Softwareentwicklung"</p>
+                    <span class="ranking-badge top-3">Top 3, Seite 1</span>
+                    <p class="project-note">Betrieb eingestellt</p>
                 </div>
             </a>
-            <p style="text-align: center; color: white; font-size: 0.9em; letter-spacing: -0.007em;">
-                <a href="https://www.google.com/search?q=Softwareentwicklung" target="_blank"
-                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
-                    Agentur Resultate für:<br>"Softwareentwicklung"<br>Google SEO</a>
-            </p>
-        </div>
 
-        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-            <a href="https://nagelstudio-sg.ch/" target="_blank" style="display: block; text-decoration: none; background-color: #ffc425;">
-                <div class="shiny-card-content">
-
-                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 0px; margin-top: 40px;">
-                        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=48,h=48,fit=crop,f=png/dJo6gRyj5zTznGq9/nagelstudio-sg-m5KwRV2rjBswPPKr.png" alt="Nagelstudio St. Gallen Logo" style="width: 30px; height: auto; display: block;">
+            <!-- Project 3: Nagelstudio St. Gallen -->
+            <a href="https://nagelstudio-sg.ch/" target="_blank" rel="noopener" class="project-card">
+                <div class="glow-blob"></div>
+                <div class="glow-target"></div>
+                <div class="project-card-inner">
+                    <div class="project-icon">
+                        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=48,h=48,fit=crop,f=png/dJo6gRyj5zTznGq9/nagelstudio-sg-m5KwRV2rjBswPPKr.png" alt="Nagelstudio St. Gallen" loading="lazy">
                     </div>
-
-                    <h2>NAGELSTUDIO ST. GALLEN</h2>
-                    <p style="color: #C7FFD0;">Google SEO Ranking:<br>1. Seite</p>
-                    <p>Komplett neue Webseite seit Dez 2024</p>
-
+                    <h3>Nagelstudio St. Gallen</h3>
+                    <p class="project-keyword">"Nagelstudio St. Gallen"</p>
+                    <span class="ranking-badge page-1">Seite 1</span>
                 </div>
             </a>
-            <p style="text-align: center; color: white; font-size: 0.9em; letter-spacing: -0.007em;">
-                <a href="https://www.google.com/search?q=Nagelstudio+St+Gallen" target="_blank"
-                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
-                    Agentur Resultate für:<br>"Nagelstudio St. Gallen"<br>Google SEO</a>
-            </p>
-        </div>
 
-
-        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/winterthur" target="_blank" style="display: block; text-decoration: none; background-color: #00b159;">
-                <div class="shiny-card-content">
-                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 0px; margin-top: 50px;">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Nachhilfe Winterthur Logo" style="width: 30px; height: auto; display: block;">
+            <!-- Project 4: Nachhilfe Winterthur -->
+            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/winterthur" target="_blank" rel="noopener" class="project-card">
+                <div class="glow-blob"></div>
+                <div class="glow-target"></div>
+                <div class="project-card-inner">
+                    <div class="project-icon">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
                     </div>
-                    <h2>NACHHILFE WINTERTHUR LOTUS</h2>
-                    <p style="color: #C7FFD0;">Google SEO Ranking:<br>2. Seite</p>
-                    <p>Frisch seit Nov 2024</p>
+                    <h3>Nachhilfe Winterthur - Lotus</h3>
+                    <p class="project-keyword">"Nachhilfe Winterthur"</p>
+                    <span class="ranking-badge page-2">Seite 2</span>
                 </div>
             </a>
-            <p style="text-align: center; color: white; font-size: 0.9em; letter-spacing: -0.007em;">
-                <a href="https://www.google.com/search?q=Nachhilfe+Winterthur" target="_blank"
-                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
-                    Agentur Resultate für:<br>"Nachhilfe Winterthur"<br>Google SEO</a>
-            </p>
-        </div>
 
-        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-            <a href="https://ayana-med.ch/med/tattoo/" target="_blank" style="display: block; text-decoration: none; background-color: #EF98BC;">
-                <div class="shiny-card-content">
-                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 0px; margin-top: 40px;">
-                        <img src="https://ayana-med.ch/favicon.ico" alt="Areola Tätowierung Logo" style="width: 30px; height: auto; display: block;">
+            <!-- Project 5: Areola Tätowierung -->
+            <a href="https://ayana-med.ch/med/tattoo/" target="_blank" rel="noopener" class="project-card">
+                <div class="glow-blob"></div>
+                <div class="glow-target"></div>
+                <div class="project-card-inner">
+                    <div class="project-icon">
+                        <img src="https://ayana-med.ch/favicon.ico" alt="Ayana-Med" loading="lazy">
                     </div>
-                    <h2>AREOLA TÄTOWIERUNG AYANA-MED</h2>
-                    <p style="color: #C7FFD0;">Google SEO Ranking:<br>1. Seite, Top 3</p>
+                    <h3>Areola Tätowierung - Ayana-Med</h3>
+                    <p class="project-keyword">"Areola Tätowierung"</p>
+                    <span class="ranking-badge top-3">Top 3, Seite 1</span>
                 </div>
             </a>
-            <p style="text-align: center; color: white; font-size: 0.9em; letter-spacing: -0.007em;">
-                <a href="https://www.google.com/search?q=Areola+Tätowierung" target="_blank"
-                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
-                    Agentur Resultate für:<br>"Areola Tätowierung"<br>Google SEO</a>
-            </p>
-        </div>
 
-
-        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/stgallen" target="_blank" style="display: block; text-decoration: none; background-color: #00aedb;">
-                <div class="shiny-card-content">
-                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 0px; margin-top: 10px;">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Nachhilfe St. Gallen Logo" style="width: 30px; height: auto; display: block;">
+            <!-- Project 6: Nachhilfe St. Gallen -->
+            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/stgallen" target="_blank" rel="noopener" class="project-card">
+                <div class="glow-blob"></div>
+                <div class="glow-target"></div>
+                <div class="project-card-inner">
+                    <div class="project-icon">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
                     </div>
-                    <h2>NACHHILFE ST. GALLEN LOTUS</h2>
-                    <p style="color: #C7FFD0;">Google SEO Ranking:<br>1. Seite, Top 3</p>
+                    <h3>Nachhilfe St. Gallen - Lotus</h3>
+                    <p class="project-keyword">"Nachhilfe St. Gallen"</p>
+                    <span class="ranking-badge top-3">Top 3, Seite 1</span>
                 </div>
             </a>
-            <p style="text-align: center; color: white; font-size: 0.9em; letter-spacing: -0.007em;">
-                <a href="https://www.google.com/search?q=Nachhilfe+St+Gallen" target="_blank"
-                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
-                    Agentur Resultate für:<br>"Nachhilfe St. Gallen"<br>Google SEO</a>
-            </p>
-        </div>
 
-
-
-        <div class="shiny-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/frauenfeld" target="_blank" style="display: block; text-decoration: none; background-color: #26B09D;">
-                <div class="shiny-card-content">
-                    <div style="background-color: white; border-radius: 80%; padding: 10px; display: inline-block; margin-bottom: 0px; margin-top: 40px;">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Nachhilfe Frauenfeld Logo" style="width: 30px; height: auto; display: block;">
+            <!-- Project 7: Nachhilfe Frauenfeld -->
+            <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/frauenfeld" target="_blank" rel="noopener" class="project-card">
+                <div class="glow-blob"></div>
+                <div class="glow-target"></div>
+                <div class="project-card-inner">
+                    <div class="project-icon">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
                     </div>
-                    <h2>NACHHILFE FRAUENFELD LOTUS</h2>
-                    <p style="color: #C7FFD0;">Google SEO Ranking:<br>1. Seite, Top 3</p>
+                    <h3>Nachhilfe Frauenfeld - Lotus</h3>
+                    <p class="project-keyword">"Nachhilfe Frauenfeld"</p>
+                    <span class="ranking-badge top-3">Top 3, Seite 1</span>
                 </div>
             </a>
-            <p style="text-align: center; color: white; font-size: 0.9em; letter-spacing: -0.007em;">
-                <a href="https://www.google.com/search?q=Nachhilfe+Frauenfeld" target="_blank"
-                    style="color: white; text-decoration: underline; background-color: transparent; border-radius: 12px; margin-top: 5px; padding: 0px;">SEO
-                    Agentur Resultate für:<br>"Nachhilfe Frauenfeld"<br>Google SEO</a>
-            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>SEO Services</h2>
+            <p class="mono">// Professionelle Leistungen, faire Preise</p>
         </div>
 
+        <div class="glass-panel terminal-panel glow-card">
+            <div class="glow-blob"></div>
+            <div class="glow-target"></div>
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
+                </div>
+                <span class="terminal-title">seo-services.config</span>
+            </div>
 
-    </div>
+            <ul class="services-list">
+                <li class="service-item">
+                    <div class="service-name">SEO Workshop</div>
+                    <p class="service-description">Massgeschneiderte Schulung für Ihr Team mit direkten Optimierungsmöglichkeiten.</p>
+                    <ul class="service-features">
+                        <li>Keyword-Recherche live erklärt</li>
+                        <li>Onpage-Grundlagen vermittelt</li>
+                        <li>Praktische Übungen an Ihrer Website</li>
+                    </ul>
+                    <div class="service-price">Ab CHF 800</div>
+                </li>
 
+                <li class="service-item">
+                    <div class="service-name">SEO Beratung & Audit</div>
+                    <p class="service-description">Detaillierte Analyse Ihrer Website mit konkreten Handlungsempfehlungen.</p>
+                    <ul class="service-features">
+                        <li>Technischer SEO-Check</li>
+                        <li>Wettbewerbsanalyse</li>
+                        <li>Priorisierter Massnahmenplan</li>
+                    </ul>
+                    <div class="service-price">Ab CHF 1'500</div>
+                </li>
 
-        <div class="content-section">
-        <h2>SEO Agentur Preise in der Schweiz</h2>
-        <p>
-          Über mich: auf Linked<a href="https://www.linkedin.com/in/daniel-g%C3%A4chter-2b3411158/" target="_blank" style="background: #0B66C2; padding: 0px 2px; line-height: 1.1em; border-radius: 2px;">in</a> <a href="https://www.linkedin.com/in/daniel-g%C3%A4chter-2b3411158/" target="_blank" style="color: #0000ee; background: transparent; font-size: 1em; padding: 0px;">Daniel Gächter </a>
-        </p>
-        <p>
-            Laut <a href="https://www.gryps.ch/produkte/seo-agentur-39/seo-kosten/" rel="nofollow" style="color: #0075BE; background: transparent;
-            padding: 0px 0px; font-size: 1em;
-            transition: transform 0.3s ease, background 0.3s ease;">Gryps</a> können die Kosten für eine <b>SEO Agentur</b> in der Schweiz stark variieren. Ich biete dieselben Leistungen <b>zielführend und dennoch günstiger</b> an – ideal für Ihr Budget und Ihre SEO-Ziele.
-        </p>
+                <li class="service-item">
+                    <div class="service-name">SEO Umsetzung</div>
+                    <p class="service-description">Einmalige Onpage-Optimierung mit Keyword-Analyse und Content-Optimierung.</p>
+                    <ul class="service-features">
+                        <li>Keyword-Strategie entwickeln</li>
+                        <li>Meta-Tags & Content optimieren</li>
+                        <li>Technische Fehler beheben</li>
+                    </ul>
+                    <div class="service-price">Ab CHF 1'500</div>
+                </li>
 
-        <h3 style="margin-top: 60px; margin-bottom: 50px;">Typische SEO Preise von SEO-Agenturen in der Schweiz:</h3>
-        <ul>
-            <li>
-                <strong>SEO-Workshop: ab CHF 1'000 bei anderen SEO Agenturen</strong>
-                Ein Workshop, der speziell auf Ihr Unternehmen zugeschnitten ist. Schulung Ihrer Mitarbeitenden und direkte Optimierungsmöglichkeiten – ohne Umsetzung.
-            </li>
-            <li>
-                <strong>SEO-Beratung: ab CHF 2'000 bei anderen SEO Agenturen</strong>
-                Umfasst eine detaillierte Analyse Ihrer Website (SEO-Audit) sowie massgeschneiderte Lösungsvorschläge für Ihr KMU. Auch hier ist keine Umsetzung inbegriffen.
-            </li>
-            <li>
-                <strong>SEO-Umsetzung durch eine Agentur: ab CHF 2'000 bei anderen SEO Agenturen</strong>
-                Einmalige Onpage-Optimierung inklusive Keyword-Analyse, Umsetzung und Textoptimierung.
-            </li>
-            <li>
-                <strong>SEO-Full-Service-Agentur: ab CHF 1'000 pro Monat bei anderen SEO Agenturen</strong>
-                Komplettbetreuung mit regelmässigen Onpage- und Offpage-Optimierungen. Ergänzt durch Google Ads, um Ihre Online-Präsenz nachhaltig zu stärken.
-            </li>
-        </ul>
+                <li class="service-item">
+                    <div class="service-name">SEO Full-Service</div>
+                    <p class="service-description">Laufende Betreuung mit Onpage, Offpage und regelmässigem Reporting.</p>
+                    <ul class="service-features">
+                        <li>Monatliche Optimierungen</li>
+                        <li>Content-Erstellung & Linkbuilding</li>
+                        <li>Transparente Performance-Reports</li>
+                    </ul>
+                    <div class="service-price">Ab CHF 800/Monat</div>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-        <h3 style="margin-top: 60px; margin-bottom: 50px;">Beste SEO Agentur? Warum meine SEO Agentur die bessere Wahl ist:</h3>
-        <ul>
-            <li><strong>Günstigere Preise:</strong> Dieselben professionellen Leistungen wie oben, jedoch gibt es fairere <b>Google SEO Preise</b>.</li>
-            <li><strong>Pakete:</strong> Zur Kostenübersicht biete ich auch für kleine Unternehmen greifbare Preise durch einmalige Gesamtpakete.</li>
-        </ul>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <h2>Kontakt</h2>
+            <p class="mono">// Projekt besprechen</p>
+        </div>
 
-        <article style="font-size: 1.4em;">Jetzt alüte oder uf WhatsApp schriebe: 076 281 85 82</article>
-    </div>
+        <div class="glass-panel contact-content hud-brackets glow-card">
+            <div class="glow-blob"></div>
+            <div class="glow-target"></div>
+            <span class="bracket-bl"></span>
+            <span class="bracket-br"></span>
 
+            <p class="contact-intro">
+                Bereit für bessere Rankings? Lass uns über dein Projekt sprechen.
+            </p>
+
+            <div class="contact-methods">
+                <a href="https://wa.me/41762818582" class="contact-method" target="_blank" rel="noopener">
+                    <span class="contact-method-icon">💬</span>
+                    <div class="contact-method-text">
+                        <span class="contact-method-label">WhatsApp</span>
+                        <span class="contact-method-value">076 281 85 82</span>
+                    </div>
+                </a>
+
+                <a href="tel:+41762818582" class="contact-method">
+                    <span class="contact-method-icon">📞</span>
+                    <div class="contact-method-text">
+                        <span class="contact-method-label">Telefon</span>
+                        <span class="contact-method-value">076 281 85 82</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://ch.linkedin.com/in/daniel-g%C3%A4chter-2b3411158" class="social-link" target="_blank" rel="noopener">
+                    <span>in</span> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hud-footer">
+        <div class="footer-content">
+            <p class="footer-text">
+                &copy; 2026 <a href="https://ch.linkedin.com/in/daniel-g%C3%A4chter-2b3411158" target="_blank" rel="noopener">Daniel Gächter</a> | SEO Agentur Schweiz
+            </p>
+        </div>
+    </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "SEO Agentur Schweiz | Google SEO & GPT SEO",
+        "image": "/favicon.ico",
+        "url": "https://tryotrix.github.io",
+        "telephone": "+41762818582",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zürich",
+            "addressRegion": "ZH",
+            "addressCountry": "CH"
+        },
+        "priceRange": "$$",
+        "description": "SEO Agentur Schweiz - Professionelle Suchmaschinenoptimierung für Google & GPT. Nachweisbare Top-Rankings zu fairen Preisen.",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            }
+        ],
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "47.3769",
+            "longitude": "8.5417"
+        },
+        "serviceArea": {
+            "@type": "AdministrativeArea",
+            "name": "Schweiz"
+        }
+    }
+    </script>
+
+    <!-- Scroll Reveal & Glow Effect Scripts -->
+    <script>
+    // Rising Stars Canvas Animation
+    const canvas = document.getElementById('starCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Star {
+        constructor() {
+            this.reset();
+        }
+
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height + 10;
+            this.size = Math.random() * 2 + 1;
+            this.speed = Math.random() * 1 + 0.5;
+            this.opacity = Math.random() * 0.5 + 0.3;
+            this.fadeDelay = Math.random() * 600 + 100;
+            this.fadeStart = null;
+            this.color = this.getRandomColor();
+        }
+
+        getRandomColor() {
+            const colors = [
+                '0, 240, 255',   // cyan
+                '255, 0, 170',   // magenta
+                '255, 170, 0',   // gold
+                '255, 255, 255'  // white
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        update(timestamp) {
+            this.y -= this.speed;
+
+            if (!this.fadeStart && this.y < canvas.height * 0.7) {
+                this.fadeStart = timestamp;
+            }
+
+            if (this.fadeStart) {
+                const elapsed = timestamp - this.fadeStart;
+                if (elapsed > this.fadeDelay) {
+                    this.opacity -= 0.008;
+                }
+            }
+
+            if (this.y < -10 || this.opacity <= 0) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = `rgba(${this.color}, ${this.opacity})`;
+            ctx.fill();
+        }
+    }
+
+    const stars = Array.from({ length: 80 }, () => new Star());
+    // Distribute initial positions
+    stars.forEach((star, i) => {
+        star.y = Math.random() * canvas.height;
+    });
+
+    function animateStars(timestamp) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        stars.forEach(star => {
+            star.update(timestamp);
+            star.draw();
+        });
+
+        requestAnimationFrame(animateStars);
+    }
+
+    requestAnimationFrame(animateStars);
+
+    // Hero Card Stars
+    const heroCanvas = document.getElementById('heroStarCanvas');
+    const heroCtx = heroCanvas.getContext('2d');
+
+    function resizeHeroCanvas() {
+        const rect = heroCanvas.parentElement.getBoundingClientRect();
+        heroCanvas.width = rect.width;
+        heroCanvas.height = rect.height;
+    }
+    resizeHeroCanvas();
+    window.addEventListener('resize', resizeHeroCanvas);
+
+    class HeroStar {
+        constructor(canvasWidth, canvasHeight) {
+            this.canvasWidth = canvasWidth;
+            this.canvasHeight = canvasHeight;
+            this.reset();
+        }
+
+        reset() {
+            this.x = Math.random() * this.canvasWidth;
+            this.y = this.canvasHeight + 5;
+            this.size = Math.random() * 2 + 0.5;
+            this.speed = Math.random() * 0.8 + 0.3;
+            this.opacity = Math.random() * 0.6 + 0.2;
+            this.fadeDelay = Math.random() * 400 + 50;
+            this.fadeStart = null;
+            this.color = this.getRandomColor();
+        }
+
+        getRandomColor() {
+            const colors = [
+                '0, 240, 255',   // cyan
+                '255, 0, 170',   // magenta
+                '255, 255, 255'  // white
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        update(timestamp, canvasHeight) {
+            this.y -= this.speed;
+
+            if (!this.fadeStart && this.y < canvasHeight * 0.5) {
+                this.fadeStart = timestamp;
+            }
+
+            if (this.fadeStart) {
+                const elapsed = timestamp - this.fadeStart;
+                if (elapsed > this.fadeDelay) {
+                    this.opacity -= 0.01;
+                }
+            }
+
+            if (this.y < -5 || this.opacity <= 0) {
+                this.canvasWidth = heroCanvas.width;
+                this.canvasHeight = heroCanvas.height;
+                this.reset();
+            }
+        }
+
+        draw(ctx) {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = `rgba(${this.color}, ${this.opacity})`;
+            ctx.fill();
+        }
+    }
+
+    let heroStars = Array.from({ length: 30 }, () => new HeroStar(heroCanvas.width, heroCanvas.height));
+    heroStars.forEach(star => {
+        star.y = Math.random() * heroCanvas.height;
+    });
+
+    function animateHeroStars(timestamp) {
+        heroCtx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+
+        heroStars.forEach(star => {
+            star.update(timestamp, heroCanvas.height);
+            star.draw(heroCtx);
+        });
+
+        requestAnimationFrame(animateHeroStars);
+    }
+
+    requestAnimationFrame(animateHeroStars);
+
+    // Scroll Reveal Animation
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const revealOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all scroll-reveal elements
+    document.querySelectorAll('.scroll-reveal, .project-card').forEach(el => {
+        revealOnScroll.observe(el);
+    });
+
+    // Glow Card Effect - Mouse tracking
+    const cards = document.querySelectorAll('.project-card, .glow-card');
+
+    // Only enable glow effect on desktop (no touch)
+    if (!('ontouchstart' in window)) {
+        window.addEventListener('mousemove', (e) => {
+            cards.forEach(card => {
+                const blob = card.querySelector('.glow-blob');
+                const target = card.querySelector('.glow-target');
+                if (!blob || !target) return;
+
+                const rect = card.getBoundingClientRect();
+                // Different blob sizes: hero=300, glow-card=250, project-card=200
+                let blobSize = 200;
+                if (card.classList.contains('hero-content')) {
+                    blobSize = 300;
+                } else if (card.classList.contains('glow-card')) {
+                    blobSize = 250;
+                }
+                const x = e.clientX - rect.left - (blobSize / 2);
+                const y = e.clientY - rect.top - (blobSize / 2);
+
+                blob.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    }
+
+    // Hero parallax on scroll (subtle)
+    const heroContent = document.querySelector('.hero-content');
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                if (heroContent && scrolled < window.innerHeight) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+    </script>
 </body>
 </html>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "SEO Agentur Schweiz | Google SEO & GPT SEO",
-  "image": "/favicon.ico",
-  "url": "https://tryotrix.github.io",
-  "telephone": "",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "",
-    "addressLocality": "Zürich",
-    "addressRegion": "ZH",
-    "postalCode": "8001",
-    "addressCountry": "CH"
-  },
-  "priceRange": "$$",
-  "description": "SEO Agentur Schweiz. Professionelle SEO-Dienstleistungen in der Schweiz. Ich helfe, Ihr Google-Ranking zu verbessern und mehr organischen Traffic zu erzielen.",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "08:00",
-      "closes": "18:00"
-    }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "47.3769",
-    "longitude": "8.5417"
-  },
-  "serviceArea": {
-    "@type": "AdministrativeArea",
-    "name": "Schweiz"
-  },
-}
-</script>
-
-<script>
-    [...document.querySelectorAll('.fancy-wipe')].forEach((el) => {
-	const text = el.innerText;
-	const classes = ['text','wipe-in','blur-in','blur-in-2'];
-	const els = classes.map((v) => {
-		const el = document.createElement('span');
-		el.innerText = text;
-		el.classList.add(v);
-		return el;
-	});
-	el.innerText = '';
-	el.classList.add('go');
-	els.forEach((v) => el.append(v));
-})
-</script>
