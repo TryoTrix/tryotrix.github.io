@@ -49,14 +49,15 @@ Das Design basiert auf einem futuristischen "Dark Glass HUD" Theme:
 
 ## SEO-Projekte (Karten)
 
-### Lotus Academy (6 Karten)
+### Lotus Academy (8 Karten)
 1. **Beste Nachhilfe Schweiz** - Rang #1
 2. **Nachhilfe Münchwilen** - Rang #1
 3. **Nachhilfe Preise/Kosten** - Rang #1
 4. **Nachhilfe Wil** - Top 3
 5. **Nachhilfe Winterthur** - Top 3
-6. **Nachhilfe St. Gallen** - Top 3
+6. **Nachhilfe St.&nbsp;Gallen** - Top 3
 7. **Nachhilfe Frauenfeld** - Top 3
+8. **Vocal Range Test** - Top 3
 
 ### Andere Projekte
 - **Ayana-Med Tattoo** - Rang #1 ("Areola Tätowierung", "Brustwarzen Tätowierung")
