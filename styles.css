@@ -1165,6 +1165,12 @@ h3 {
     font-size: 1.2rem;
   }
 
+  /* Rotierende Border-Animation deaktivieren (Performance) */
+  .featured-project::before {
+    animation: none;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta), var(--neon-gold));
+  }
+
   .featured-glow-ring {
     filter: blur(20px);
   }
