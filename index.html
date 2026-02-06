@@ -80,7 +80,7 @@
                 Deine Website auf Seite 1. Nachweisbar.<br>
                 Ich bin <a href="https://ch.linkedin.com/in/daniel-g%C3%A4chter-2b3411158" target="_blank" rel="noopener nofollow">Daniel Gächter</a> – SEO-Experte mit bewiesenen Rankings.
             </p>
-            <a href="#contact" class="cta-button">Projekt besprechen</a>
+            <a href="#contact" class="cta-button">Gratis SEO-Check →</a>
         </div>
 
         <!-- Scroll Indicator -->
@@ -299,6 +299,19 @@
         </div>
     </section>
 
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="glass-panel cta-banner-content hud-brackets glow-card">
+            <div class="glow-blob"></div>
+            <div class="glow-target"></div>
+            <span class="bracket-bl"></span>
+            <span class="bracket-br"></span>
+            <h2 class="cta-banner-title">Bereit für Seite 1?</h2>
+            <p class="cta-banner-text">Finde heraus, wo deine Website steht – kostenlos und unverbindlich.</p>
+            <a href="#contact" class="cta-button">Gratis SEO-Check anfordern</a>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="section-header">
@@ -328,6 +341,7 @@
                         <li>Praktische Übungen an Ihrer Website</li>
                     </ul>
                     <div class="service-price">Ab CHF 800</div>
+                    <a href="#contact" class="service-cta">Anfragen →</a>
                 </li>
 
                 <li class="service-item">
@@ -339,6 +353,7 @@
                         <li>Priorisierter Massnahmenplan</li>
                     </ul>
                     <div class="service-price">Ab CHF 1'500</div>
+                    <a href="#contact" class="service-cta">Anfragen →</a>
                 </li>
 
                 <li class="service-item">
@@ -350,6 +365,7 @@
                         <li>Technische Fehler beheben</li>
                     </ul>
                     <div class="service-price">Ab CHF 1'500</div>
+                    <a href="#contact" class="service-cta">Anfragen →</a>
                 </li>
 
                 <li class="service-item">
@@ -361,16 +377,48 @@
                         <li>Transparente Performance-Reports</li>
                     </ul>
                     <div class="service-price">Ab CHF 800/Monat</div>
+                    <a href="#contact" class="service-cta">Anfragen →</a>
                 </li>
             </ul>
         </div>
     </section>
 
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="section-header scroll-reveal">
+            <h2>So läuft's ab</h2>
+            <p class="mono">// In 3 Schritten zu besseren Rankings</p>
+        </div>
+        <div class="process-steps">
+            <div class="glass-panel process-step glow-card">
+                <div class="glow-blob"></div>
+                <div class="glow-target"></div>
+                <div class="process-number">01</div>
+                <h3>Gratis SEO-Check</h3>
+                <p>Ich analysiere deine Website und zeige dir konkret, wo du Potenzial verschenkst.</p>
+            </div>
+            <div class="glass-panel process-step glow-card">
+                <div class="glow-blob"></div>
+                <div class="glow-target"></div>
+                <div class="process-number">02</div>
+                <h3>Strategie & Angebot</h3>
+                <p>Du erhältst einen klaren Plan mit Massnahmen, Zeitrahmen und transparenten Kosten.</p>
+            </div>
+            <div class="glass-panel process-step glow-card">
+                <div class="glow-blob"></div>
+                <div class="glow-target"></div>
+                <div class="process-number">03</div>
+                <h3>Umsetzung & Rankings</h3>
+                <p>Ich optimiere deine Website und du siehst die Ergebnisse in den Suchergebnissen.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="section-header">
-            <h2>Kontakt</h2>
-            <p class="mono">// Projekt besprechen</p>
+        <div class="section-header scroll-reveal">
+            <h2>Gratis SEO-Check</h2>
+            <p class="mono">// Unverbindlich anfragen</p>
         </div>
 
         <div class="glass-panel contact-content hud-brackets glow-card">
@@ -380,8 +428,40 @@
             <span class="bracket-br"></span>
 
             <p class="contact-intro">
-                Bereit für bessere Rankings? Lass uns über dein Projekt sprechen.
+                Schick mir deine Website – ich zeige dir kostenlos, wo du Rankings verschenkst.
             </p>
+
+            <form class="contact-form" id="contactForm" novalidate>
+                <!-- Honeypot -->
+                <div class="form-field-hp" aria-hidden="true">
+                    <input type="text" name="website_url" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="formName">Name</label>
+                    <input type="text" id="formName" name="name" required placeholder="Dein Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="formUrl">Website-URL</label>
+                    <input type="url" id="formUrl" name="url" required placeholder="https://deine-website.ch">
+                </div>
+
+                <div class="form-group">
+                    <label for="formMessage">Nachricht <span class="optional">(optional)</span></label>
+                    <textarea id="formMessage" name="message" rows="3" placeholder="Was möchtest du erreichen?"></textarea>
+                </div>
+
+<button type="submit" class="cta-button form-submit">
+                    Gratis SEO-Check anfordern
+                </button>
+
+                <p class="form-hint">Antwort innerhalb von 24h via WhatsApp oder Telefon.</p>
+            </form>
+
+            <div class="contact-divider">
+                <span>oder direkt</span>
+            </div>
 
             <div class="contact-methods">
                 <a href="#" class="contact-method contact-wa" target="_blank" rel="noopener">
@@ -751,6 +831,76 @@
             ticking = true;
         }
     });
+
+    // Contact Form Handler
+    (function() {
+        const form = document.getElementById('contactForm');
+        const formLoadTime = Date.now();
+
+
+        // Rate limiting (localStorage)
+        const RATE_KEY = 'seo_form_sub';
+        const RATE_MAX = 3;
+        const RATE_WINDOW = 3600000; // 1 hour
+
+        function checkRateLimit() {
+            var subs = JSON.parse(localStorage.getItem(RATE_KEY) || '[]');
+            var now = Date.now();
+            subs = subs.filter(function(t) { return now - t < RATE_WINDOW; });
+            localStorage.setItem(RATE_KEY, JSON.stringify(subs));
+            return subs.length < RATE_MAX;
+        }
+
+        function recordSubmission() {
+            var subs = JSON.parse(localStorage.getItem(RATE_KEY) || '[]');
+            subs.push(Date.now());
+            localStorage.setItem(RATE_KEY, JSON.stringify(subs));
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Honeypot
+            var hp = form.querySelector('input[name="website_url"]');
+            if (hp && hp.value) return;
+
+            // Time check (min 5 seconds)
+            if (Date.now() - formLoadTime < 5000) {
+                alert('Bitte nimm dir einen Moment Zeit.');
+                return;
+            }
+
+            // Rate limit
+            if (!checkRateLimit()) {
+                alert('Zu viele Anfragen. Bitte versuche es später erneut.');
+                return;
+            }
+
+            // Values
+            var name = document.getElementById('formName').value.trim();
+            var url = document.getElementById('formUrl').value.trim();
+            var message = document.getElementById('formMessage').value.trim();
+
+            if (!name || !url) {
+                alert('Bitte fülle Name und Website-URL aus.');
+                return;
+            }
+
+            // Build WhatsApp message
+            var waMsg = 'Hallo! Ich möchte einen Gratis SEO-Check.\n\n';
+            waMsg += 'Name: ' + name + '\n';
+            waMsg += 'Website: ' + url;
+            if (message) waMsg += '\n\nNachricht: ' + message;
+
+            // Phone (same obfuscation as below)
+            var c = ['\x34','\x31','\x37','\x36','\x32','\x38','\x31','\x38','\x35','\x38','\x32'];
+            var pc = c.join('');
+
+            recordSubmission();
+
+            window.open('https://wa.me/' + pc + '?text=' + encodeURIComponent(waMsg), '_blank');
+        });
+    })();
 
     // Phone number protection (obfuscation)
     (function() {
