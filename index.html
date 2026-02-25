@@ -27,58 +27,56 @@
     <meta name="twitter:description" content="Professionelle Suchmaschinenoptimierung für Google & GPT. Nachweisbare Top-Rankings zu fairen Preisen.">
     <meta name="twitter:image" content="https://tryotrix.github.io/og-image.jpg">
 
-    <!-- Critical CSS (inline for fast first paint) -->
+    <!-- Fonts (local) -->
     <style>
-        :root{--bg-dark:#0a0a0f;--neon-cyan:#00f0ff;--neon-magenta:#ff00aa;--text-primary:#e0e0e0;--text-secondary:#808090}
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('fonts/Montserrat-Black.woff2') format('woff2');
+            font-weight: 900;
+            font-style: normal;
+            font-display: optional;
+        }
+        @font-face {
+            font-family: 'Lato';
+            src: url('fonts/Lato-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: optional;
+        }
+
+        /* Critical CSS */
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth}
-        body{font-family:system-ui,-apple-system,sans-serif;background:#0a0a0f;color:#e0e0e0;line-height:1.6;min-height:100vh;overflow-x:hidden}
-        .ambient-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:#0a0a0f}
-        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px}
-        .glass-panel{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;backdrop-filter:blur(20px);position:relative;overflow:hidden}
-        .hero-content{text-align:center;padding:clamp(40px,8vw,80px);max-width:800px}
-        h1,h2,h3{font-weight:700;letter-spacing:0.05em;text-transform:uppercase}
-        h1{font-size:clamp(2rem,6vw,4rem)}
-        .hero-title{margin-bottom:0.5em;background:linear-gradient(135deg,#00f0ff,#ff00aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        body{font-family:'Lato',system-ui,-apple-system,sans-serif;background:#f4f3f2;color:#333;line-height:1.7;min-height:100vh;overflow-x:hidden}
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;position:relative}
+        .glass-panel{background:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.5);border-radius:20px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 32px rgba(0,0,0,0.06),inset 0 1px 0 rgba(255,255,255,0.4);position:relative}
+        .hero-content{text-align:center;padding:clamp(40px,8vw,80px);max-width:800px;position:relative;z-index:1}
+        h1,h2,h3,h4{font-family:'Montserrat',system-ui,sans-serif;font-weight:900;color:#333;line-height:1.2}
+        .hero-title{font-size:clamp(2.2rem,6vw,4.2rem);margin-bottom:0.4em;background:linear-gradient(90deg,#0075BE 0%,#ff00aa 30%,#0075BE 60%,#00c8d4 100%);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     </style>
 
-    <!-- Google Fonts (async, non-blocking) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-
-    <!-- Stylesheet (preload for faster loading) -->
-    <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Ambient Background -->
-    <div class="ambient-bg">
-        <div class="neon-orb"></div>
-        <div class="neon-orb"></div>
-        <div class="neon-orb"></div>
-        <canvas id="starCanvas"></canvas>
+    <!-- Floating Circles Background -->
+    <div class="floating-circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
     </div>
-
-    <!-- Scanlines Overlay -->
-    <div class="scanlines"></div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="glass-panel hero-content hud-brackets glow-card">
-            <div class="glow-blob"></div>
-            <div class="glow-target"></div>
-            <canvas id="heroStarCanvas"></canvas>
-            <span class="bracket-bl"></span>
-            <span class="bracket-br"></span>
-
+        <div class="glass-panel hero-content">
             <h1 class="hero-title">SEO Agentur Schweiz</h1>
             <p class="hero-subtitle">Google SEO & GPT SEO</p>
             <p class="hero-tagline">
                 Deine Website auf Seite 1. Nachweisbar.<br>
-                Ich bin <a href="https://ch.linkedin.com/in/daniel-g%C3%A4chter-2b3411158" target="_blank" rel="noopener nofollow">Daniel Gächter</a> – SEO-Experte mit bewiesenen Rankings.
+                Ich bin <a href="https://ch.linkedin.com/in/daniel-g%C3%A4chter-2b3411158" target="_blank" rel="noopener nofollow">Daniel Gächter</a> – SEO-Experte mit nachweisbaren Top-Rankings.
             </p>
             <a href="#contact" class="cta-button">Gratis SEO-Check →</a>
         </div>
@@ -97,31 +95,21 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="section-header scroll-reveal">
-            <h2>Bewiesene Rankings</h2>
-            <p class="mono">// Hart umkämpfte Keywords – viele weitere Pages auf Rang #1</p>
+            <h2>Echte Ergebnisse</h2>
+            <p class="section-subtitle">Hart umkämpfte Keywords, nachweisbare Top-Rankings</p>
         </div>
 
         <div class="project-grid">
-            <!-- Featured Project: Freizeit-Vergleich-Schweiz -->
+            <!-- Featured Projects: Eigene Projekte -->
             <div class="featured-project-wrapper">
-                <div class="featured-glow-ring"></div>
-                <div class="featured-glow-ring ring-2"></div>
-                <div class="featured-particles">
-                    <span></span><span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span><span></span>
-                </div>
                 <a href="https://freizeit-vergleich-schweiz.ch" target="_blank" rel="noopener" class="project-card featured-project">
-                    <div class="holographic-overlay"></div>
-                    <div class="scan-line"></div>
-                    <div class="glow-blob"></div>
-                    <div class="glow-target"></div>
                     <div class="project-card-inner">
                         <div class="featured-badge">NEU</div>
                         <div class="project-icon new-project-icon">
-                            <img src="happy.webp" alt="Freizeit-Vergleich-Schweiz" loading="lazy">
+                            <img src="happy.webp" alt="Freizeit-Vergleich-Schweiz" width="40" height="40" loading="lazy">
                         </div>
                         <h3>Freizeit-Vergleich-Schweiz.ch</h3>
-                        <p class="project-keyword">"Freizeit Vergleich Schweiz"</p>
+                        <p class="project-keyword">"Aktivitäten Schweiz"</p>
                         <span class="ranking-badge in-progress">
                             <span class="badge-pulse"></span>
                             SEO in Arbeit
@@ -133,15 +121,31 @@
                 </a>
             </div>
 
+            <!-- SEO-Agent.ch -->
+            <a href="https://seo-agent.ch" target="_blank" rel="noopener" class="project-card">
+                <div class="project-card-inner">
+                    <div class="project-icon">
+                        <img src="favicon.ico" alt="SEO-Agent.ch" width="32" height="32" loading="lazy">
+                    </div>
+                    <h3>SEO-Agent.ch</h3>
+                    <p class="project-keyword">"SEO Agentur Schweiz"</p>
+                    <span class="ranking-badge in-progress">
+                        <span class="badge-pulse"></span>
+                        SEO in Arbeit
+                    </span>
+                    <p class="project-meta">
+                        <span class="meta-icon">✦</span> Selbst erstellt am 20.02.2026
+                    </p>
+                </div>
+            </a>
+
             <!-- ========== LOTUS ACADEMY ========== -->
 
             <!-- Lotus 1: Beste Nachhilfe Schweiz - Rang #1 -->
             <a href="https://www.nachhilfe-lotusacademy.ch/die-besten-online-nachhilfeagenturen-in-der-schweiz" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" width="32" height="32" loading="lazy">
                     </div>
                     <h3>Beste Nachhilfe - Lotus Academy</h3>
                     <p class="project-keyword">"Beste Nachhilfe Schweiz"</p>
@@ -151,11 +155,9 @@
 
             <!-- Lotus 2: Nachhilfe Münchwilen - Rang #1 -->
             <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/muenchwilen" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" width="32" height="32" loading="lazy">
                     </div>
                     <h3>Nachhilfe Münchwilen - Lotus</h3>
                     <p class="project-keyword">"Nachhilfe Münchwilen"</p>
@@ -165,11 +167,9 @@
 
             <!-- Lotus 3: Nachhilfe Preise - Rang #1 -->
             <a href="https://www.nachhilfe-lotusacademy.ch/preise" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" width="32" height="32" loading="lazy">
                     </div>
                     <h3>Nachhilfe Preise - Lotus</h3>
                     <p class="project-keyword">"Nachhilfe Preise"</p>
@@ -180,11 +180,9 @@
 
             <!-- Lotus 4: Nachhilfe Wil - Top 3 -->
             <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/wil" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" width="32" height="32" loading="lazy">
                     </div>
                     <h3>Nachhilfe Wil - Lotus Academy</h3>
                     <p class="project-keyword">"Nachhilfe Wil"</p>
@@ -192,13 +190,11 @@
                 </div>
             </a>
 
-            <!-- Lotus 4: Nachhilfe Winterthur - Top 3 -->
+            <!-- Lotus 5: Nachhilfe Winterthur - Top 3 -->
             <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/winterthur" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" width="32" height="32" loading="lazy">
                     </div>
                     <h3>Nachhilfe Winterthur - Lotus</h3>
                     <p class="project-keyword">"Nachhilfe Winterthur"</p>
@@ -206,27 +202,23 @@
                 </div>
             </a>
 
-            <!-- Lotus 5: Nachhilfe St. Gallen - Top 3 -->
+            <!-- Lotus 6: Nachhilfe St. Gallen - Top 3 -->
             <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/stgallen" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" width="32" height="32" loading="lazy">
                     </div>
-                    <h3>Nachhilfe St. Gallen - Lotus</h3>
-                    <p class="project-keyword">"Nachhilfe St. Gallen"</p>
+                    <h3>Nachhilfe St.&nbsp;Gallen - Lotus</h3>
+                    <p class="project-keyword">"Nachhilfe St.&nbsp;Gallen"</p>
                     <span class="ranking-badge top-3">Top 3, Seite 1</span>
                 </div>
             </a>
 
-            <!-- Lotus 6: Nachhilfe Frauenfeld - Top 3 -->
+            <!-- Lotus 7: Nachhilfe Frauenfeld - Top 3 -->
             <a href="https://www.nachhilfe-lotusacademy.ch/nachhilfe/standorte/frauenfeld" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" width="32" height="32" loading="lazy">
                     </div>
                     <h3>Nachhilfe Frauenfeld - Lotus</h3>
                     <p class="project-keyword">"Nachhilfe Frauenfeld"</p>
@@ -234,13 +226,11 @@
                 </div>
             </a>
 
-            <!-- Lotus 7: Vocal Range Test - Top 3 -->
+            <!-- Lotus 8: Vocal Range Test - Top 3 -->
             <a href="https://www.nachhilfe-lotusacademy.ch/vocal-range-test" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" loading="lazy">
+                        <img src="https://www.nachhilfe-lotusacademy.ch/favicon.ico" alt="Lotus Academy" width="32" height="32" loading="lazy">
                     </div>
                     <h3>Vocal Range Test - Lotus</h3>
                     <p class="project-keyword">"Vocal Range Test"</p>
@@ -252,14 +242,12 @@
 
             <!-- Ayana-Med - Rang #1 -->
             <a href="https://ayana-med.ch/med/tattoo/" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://ayana-med.ch/favicon.ico" alt="Ayana-Med" loading="lazy">
+                        <img src="https://ayana-med.ch/favicon.ico" alt="Ayana-Med" width="32" height="32" loading="lazy">
                     </div>
                     <h3>Ayana-Med Tattoo</h3>
-                    <p class="project-keyword">"Areola Tätowierung" <span class="keyword-note">// Nach Brustrekonstruktion</span></p>
+                    <p class="project-keyword">"Areola Tätowierung"</p>
                     <p class="project-keyword">"Brustwarzen Tätowierung"</p>
                     <span class="ranking-badge rank-1">Rang #1</span>
                 </div>
@@ -267,11 +255,9 @@
 
             <!-- Polygon Software - Top 3 -->
             <a href="https://polygon-software.ch/" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://polygon-software.ch/images/icon.svg" alt="Polygon Software" loading="lazy">
+                        <img src="https://polygon-software.ch/images/icon.svg" alt="Polygon Software" width="32" height="32" loading="lazy">
                     </div>
                     <h3>Polygon Software</h3>
                     <p class="project-keyword">"Softwareentwicklung"</p>
@@ -283,14 +269,12 @@
 
             <!-- Nagelstudio St. Gallen - Seite 1 -->
             <a href="https://nagelstudio-sg.ch/" target="_blank" rel="noopener" class="project-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
                 <div class="project-card-inner">
                     <div class="project-icon">
-                        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=48,h=48,fit=crop,f=png/dJo6gRyj5zTznGq9/nagelstudio-sg-m5KwRV2rjBswPPKr.png" alt="Nagelstudio St. Gallen" loading="lazy">
+                        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=48,h=48,fit=crop,f=png/dJo6gRyj5zTznGq9/nagelstudio-sg-m5KwRV2rjBswPPKr.png" alt="Nagelstudio St.&nbsp;Gallen" width="32" height="32" loading="lazy">
                     </div>
-                    <h3>Nagelstudio St. Gallen</h3>
-                    <p class="project-keyword">"Nagelstudio St. Gallen"</p>
+                    <h3>Nagelstudio St.&nbsp;Gallen</h3>
+                    <p class="project-keyword">"Nagelstudio St.&nbsp;Gallen"</p>
                     <span class="ranking-badge page-1">Seite 1</span>
                     <p class="project-note">2024</p>
                 </div>
@@ -301,85 +285,109 @@
 
     <!-- CTA Banner -->
     <section class="cta-banner">
-        <div class="glass-panel cta-banner-content hud-brackets glow-card">
-            <div class="glow-blob"></div>
-            <div class="glow-target"></div>
-            <span class="bracket-bl"></span>
-            <span class="bracket-br"></span>
+        <div class="glass-panel cta-banner-content">
             <h2 class="cta-banner-title">Bereit für Seite 1?</h2>
             <p class="cta-banner-text">Finde heraus, wo deine Website steht – kostenlos und unverbindlich.</p>
             <a href="#contact" class="cta-button">Gratis SEO-Check anfordern</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="section-header">
-            <h2>SEO Services</h2>
-            <p class="mono">// Professionelle Leistungen, faire Preise</p>
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="section-header scroll-reveal">
+            <h2>SEO Pakete</h2>
+            <p class="section-subtitle">Transparent, fair, ergebnisorientiert</p>
         </div>
 
-        <div class="glass-panel terminal-panel glow-card">
-            <div class="glow-blob"></div>
-            <div class="glow-target"></div>
-            <div class="terminal-header">
-                <div class="terminal-dots">
-                    <span class="terminal-dot"></span>
-                    <span class="terminal-dot"></span>
-                    <span class="terminal-dot"></span>
+        <div class="pricing-grid">
+            <!-- Launch-Angebot -->
+            <div class="pricing-card card-launch">
+                <span class="pricing-badge badge-launch">LIMITIERT – 4 PLÄTZE</span>
+                <div class="pricing-name">Launch-Angebot</div>
+                <div class="pricing-price">
+                    <span class="currency">CHF </span>4'500
                 </div>
-                <span class="terminal-title">seo-services.config</span>
+                <div class="pricing-price-note">einmalig + CHF 390/Monat</div>
+                <div class="pricing-value">Marktwert: <span class="strikethrough">CHF 21'600</span></div>
+                <ul class="pricing-features">
+                    <li>Neue Website / Redesign</li>
+                    <li>On-Page SEO Setup</li>
+                    <li>Keyword-Strategie</li>
+                    <li>Technische Optimierung</li>
+                    <li>1 Experten-Artikel/Monat</li>
+                    <li>Monatliches Reporting</li>
+                    <li>Persönlicher Ansprechpartner</li>
+                </ul>
+                <a href="#contact" class="pricing-cta cta-gold">Platz sichern</a>
             </div>
 
-            <ul class="services-list">
-                <li class="service-item">
-                    <div class="service-name">SEO Workshop</div>
-                    <p class="service-description">Massgeschneiderte Schulung für Ihr Team mit direkten Optimierungsmöglichkeiten.</p>
-                    <ul class="service-features">
-                        <li>Keyword-Recherche live erklärt</li>
-                        <li>Onpage-Grundlagen vermittelt</li>
-                        <li>Praktische Übungen an Ihrer Website</li>
-                    </ul>
-                    <div class="service-price">Ab CHF 800</div>
-                    <a href="#contact" class="service-cta">Anfragen →</a>
-                </li>
+            <!-- Starter -->
+            <div class="pricing-card card-starter">
+                <div class="pricing-name">Starter</div>
+                <div class="pricing-price">
+                    <span class="currency">CHF </span>500<span class="period">/Monat</span>
+                </div>
+                <div class="pricing-price-note">&nbsp;</div>
+                <div class="pricing-value">Marktwert: <span class="strikethrough">CHF 3'600</span>/Monat</div>
+                <ul class="pricing-features">
+                    <li>Keyword-Strategie</li>
+                    <li>Technische Fehler beheben</li>
+                    <li>1 Artikel/Monat</li>
+                    <li>Ganze Seite optimiert</li>
+                    <li>Ranking-Reports</li>
+                    <li>Persönlicher Support</li>
+                </ul>
+                <a href="#contact" class="pricing-cta cta-outline">Starten</a>
+            </div>
 
-                <li class="service-item">
-                    <div class="service-name">SEO Beratung & Audit</div>
-                    <p class="service-description">Detaillierte Analyse Ihrer Website mit konkreten Handlungsempfehlungen.</p>
-                    <ul class="service-features">
-                        <li>Technischer SEO-Check</li>
-                        <li>Wettbewerbsanalyse</li>
-                        <li>Priorisierter Massnahmenplan</li>
-                    </ul>
-                    <div class="service-price">Ab CHF 1'500</div>
-                    <a href="#contact" class="service-cta">Anfragen →</a>
-                </li>
+            <!-- Growth (Featured) -->
+            <div class="pricing-card card-growth featured">
+                <span class="pricing-badge badge-popular">BELIEBTESTE WAHL</span>
+                <div class="pricing-name">Growth</div>
+                <div class="pricing-price">
+                    <span class="currency">CHF </span>2'500<span class="period">/Monat</span>
+                </div>
+                <div class="pricing-price-note">&nbsp;</div>
+                <div class="pricing-value">Marktwert: <span class="strikethrough">CHF 14'000</span>/Monat</div>
+                <ul class="pricing-features">
+                    <li>Alles aus Starter</li>
+                    <li>Keyword-Dominanz-Strategie</li>
+                    <li>Technische Perfektion</li>
+                    <li>4 Artikel/Monat</li>
+                    <li>Backlink-Aufbau</li>
+                    <li>AI-Plattform-Optimierung (GPT/Perplexity)</li>
+                    <li>2-wöchentliche Strategie-Calls</li>
+                    <li>Erweiterte Tools</li>
+                </ul>
+                <a href="#contact" class="pricing-cta cta-filled">Wachstum starten</a>
+            </div>
 
-                <li class="service-item">
-                    <div class="service-name">SEO Umsetzung</div>
-                    <p class="service-description">Einmalige Onpage-Optimierung mit Keyword-Analyse und Content-Optimierung.</p>
-                    <ul class="service-features">
-                        <li>Keyword-Strategie entwickeln</li>
-                        <li>Meta-Tags & Content optimieren</li>
-                        <li>Technische Fehler beheben</li>
-                    </ul>
-                    <div class="service-price">Ab CHF 1'500</div>
-                    <a href="#contact" class="service-cta">Anfragen →</a>
-                </li>
+            <!-- Dominance -->
+            <div class="pricing-card card-dominance">
+                <span class="pricing-badge badge-enterprise">ENTERPRISE</span>
+                <div class="pricing-name">Dominance</div>
+                <div class="pricing-price">
+                    <span class="currency">CHF </span>25'000<span class="period">/Monat</span>
+                </div>
+                <div class="pricing-price-note">&nbsp;</div>
+                <div class="pricing-value">Dediziertes Team, volle Kontrolle</div>
+                <ul class="pricing-features">
+                    <li>3+ Spezialisten-Team</li>
+                    <li>20+ Content-Stücke/Monat</li>
+                    <li>Automatisierte Seitenerstellung</li>
+                    <li>CHF 5'000 Linkbuilding-Budget</li>
+                    <li>Conversion-Optimierung</li>
+                    <li>Digital PR</li>
+                    <li>Mehrsprachig (DE/FR/EN)</li>
+                    <li>Wöchentliche Reports</li>
+                    <li>Performance-Garantie</li>
+                </ul>
+                <a href="#contact" class="pricing-cta cta-dark">Kontakt aufnehmen</a>
+            </div>
+        </div>
 
-                <li class="service-item">
-                    <div class="service-name">SEO Full-Service</div>
-                    <p class="service-description">Laufende Betreuung mit Onpage, Offpage und regelmässigem Reporting.</p>
-                    <ul class="service-features">
-                        <li>Monatliche Optimierungen</li>
-                        <li>Content-Erstellung & Linkbuilding</li>
-                        <li>Transparente Performance-Reports</li>
-                    </ul>
-                    <div class="service-price">Ab CHF 800/Monat</div>
-                    <a href="#contact" class="service-cta">Anfragen →</a>
-                </li>
-            </ul>
+        <div class="pricing-guarantee">
+            <p><strong>Garantie:</strong> Mindestens 3 Keywords mit messbarer Ranking-Verbesserung in 90 Tagen, oder wir arbeiten kostenlos weiter.</p>
         </div>
     </section>
 
@@ -387,26 +395,20 @@
     <section class="process" id="process">
         <div class="section-header scroll-reveal">
             <h2>So läuft's ab</h2>
-            <p class="mono">// In 3 Schritten zu besseren Rankings</p>
+            <p class="section-subtitle">In 3 Schritten zu besseren Rankings</p>
         </div>
         <div class="process-steps">
-            <div class="glass-panel process-step glow-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
+            <div class="glass-panel process-step">
                 <div class="process-number">01</div>
                 <h3>Gratis SEO-Check</h3>
                 <p>Ich analysiere deine Website und zeige dir konkret, wo du Potenzial verschenkst.</p>
             </div>
-            <div class="glass-panel process-step glow-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
+            <div class="glass-panel process-step">
                 <div class="process-number">02</div>
                 <h3>Strategie & Angebot</h3>
                 <p>Du erhältst einen klaren Plan mit Massnahmen, Zeitrahmen und transparenten Kosten.</p>
             </div>
-            <div class="glass-panel process-step glow-card">
-                <div class="glow-blob"></div>
-                <div class="glow-target"></div>
+            <div class="glass-panel process-step">
                 <div class="process-number">03</div>
                 <h3>Umsetzung & Rankings</h3>
                 <p>Ich optimiere deine Website und du siehst die Ergebnisse in den Suchergebnissen.</p>
@@ -418,15 +420,10 @@
     <section class="contact" id="contact">
         <div class="section-header scroll-reveal">
             <h2>Gratis SEO-Check</h2>
-            <p class="mono">// Unverbindlich anfragen</p>
+            <p class="section-subtitle">Unverbindlich anfragen</p>
         </div>
 
-        <div class="glass-panel contact-content hud-brackets glow-card">
-            <div class="glow-blob"></div>
-            <div class="glow-target"></div>
-            <span class="bracket-bl"></span>
-            <span class="bracket-br"></span>
-
+        <div class="glass-panel contact-content">
             <p class="contact-intro">
                 Schick mir deine Website – ich zeige dir kostenlos, wo du Rankings verschenkst.
             </p>
@@ -452,7 +449,7 @@
                     <textarea id="formMessage" name="message" rows="3" placeholder="Was möchtest du erreichen?"></textarea>
                 </div>
 
-<button type="submit" class="cta-button form-submit">
+                <button type="submit" class="cta-button form-submit">
                     Gratis SEO-Check anfordern
                 </button>
 
@@ -490,10 +487,10 @@
     </section>
 
     <!-- Footer -->
-    <footer class="hud-footer">
+    <footer class="site-footer">
         <div class="footer-content">
             <p class="footer-text">
-                &copy; 2026 <a href="https://ch.linkedin.com/in/daniel-g%C3%A4chter-2b3411158" target="_blank" rel="noopener nofollow">Daniel Gächter</a> | SEO Agentur Schweiz
+                © 2026 <a href="https://ch.linkedin.com/in/daniel-g%C3%A4chter-2b3411158" target="_blank" rel="noopener nofollow">Daniel Gächter</a> | SEO Agentur Schweiz
             </p>
             <div class="footer-links">
                 <a href="impressum.html">Impressum</a>
@@ -502,7 +499,7 @@
         </div>
     </footer>
 
-    <!-- Structured Data (telephone added via JS) -->
+    <!-- Structured Data -->
     <script type="application/ld+json" id="structured-data">
     {
         "@context": "https://schema.org",
@@ -538,226 +535,8 @@
     }
     </script>
 
-    <!-- Scroll Reveal & Glow Effect Scripts -->
+    <!-- Scripts -->
     <script>
-    // Rising Stars Canvas Animation (optimized to avoid layout thrashing)
-    const canvas = document.getElementById('starCanvas');
-    const ctx = canvas.getContext('2d');
-
-    // Cache dimensions to avoid repeated reflows
-    let canvasWidth = 0;
-    let canvasHeight = 0;
-
-    function resizeCanvas() {
-        canvasWidth = window.innerWidth;
-        canvasHeight = window.innerHeight;
-        canvas.width = canvasWidth;
-        canvas.height = canvasHeight;
-    }
-
-    // Defer initial measurement to avoid layout thrashing
-    requestAnimationFrame(resizeCanvas);
-
-    // Debounced resize handler
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(resizeCanvas, 100);
-    });
-
-    class Star {
-        constructor() {
-            this.reset();
-        }
-
-        reset() {
-            this.x = Math.random() * canvasWidth;
-            this.y = canvasHeight + 10;
-            this.size = Math.random() * 2 + 1;
-            this.speed = Math.random() * 1 + 0.5;
-            this.opacity = Math.random() * 0.5 + 0.3;
-            this.fadeDelay = Math.random() * 600 + 100;
-            this.fadeStart = null;
-            this.color = this.getRandomColor();
-        }
-
-        getRandomColor() {
-            const colors = [
-                '0, 240, 255',   // cyan
-                '255, 0, 170',   // magenta
-                '255, 170, 0',   // gold
-                '255, 255, 255'  // white
-            ];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        update(timestamp) {
-            this.y -= this.speed;
-
-            if (!this.fadeStart && this.y < canvasHeight * 0.7) {
-                this.fadeStart = timestamp;
-            }
-
-            if (this.fadeStart) {
-                const elapsed = timestamp - this.fadeStart;
-                if (elapsed > this.fadeDelay) {
-                    this.opacity -= 0.008;
-                }
-            }
-
-            if (this.y < -10 || this.opacity <= 0) {
-                this.reset();
-            }
-        }
-
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = `rgba(${this.color}, ${this.opacity})`;
-            ctx.fill();
-        }
-    }
-
-    let stars = [];
-    let starsInitialized = false;
-
-    function initStars() {
-        if (starsInitialized || canvasWidth === 0) return;
-        stars = Array.from({ length: 80 }, () => new Star());
-        stars.forEach((star) => {
-            star.y = Math.random() * canvasHeight;
-        });
-        starsInitialized = true;
-    }
-
-    function animateStars(timestamp) {
-        if (!starsInitialized) {
-            initStars();
-        }
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-
-        stars.forEach(star => {
-            star.update(timestamp);
-            star.draw();
-        });
-
-        requestAnimationFrame(animateStars);
-    }
-
-    requestAnimationFrame(animateStars);
-
-    // Hero Card Stars
-    const heroCanvas = document.getElementById('heroStarCanvas');
-    const heroCtx = heroCanvas.getContext('2d');
-
-    // Cache hero canvas dimensions
-    let heroWidth = 0, heroHeight = 0;
-    function resizeHeroCanvas() {
-        const rect = heroCanvas.parentElement.getBoundingClientRect();
-        heroWidth = rect.width;
-        heroHeight = rect.height;
-        heroCanvas.width = heroWidth;
-        heroCanvas.height = heroHeight;
-    }
-
-    // Defer initial measurement to avoid layout thrashing
-    requestAnimationFrame(resizeHeroCanvas);
-
-    // Debounced resize for hero canvas
-    let heroResizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(heroResizeTimeout);
-        heroResizeTimeout = setTimeout(resizeHeroCanvas, 100);
-    });
-
-    class HeroStar {
-        constructor(canvasWidth, canvasHeight) {
-            this.canvasWidth = canvasWidth;
-            this.canvasHeight = canvasHeight;
-            this.reset();
-        }
-
-        reset() {
-            this.x = Math.random() * this.canvasWidth;
-            this.y = this.canvasHeight + 5;
-            this.size = Math.random() * 2 + 0.5;
-            this.speed = Math.random() * 0.8 + 0.3;
-            this.opacity = Math.random() * 0.6 + 0.2;
-            this.fadeDelay = Math.random() * 400 + 50;
-            this.fadeStart = null;
-            this.color = this.getRandomColor();
-        }
-
-        getRandomColor() {
-            const colors = [
-                '0, 240, 255',   // cyan
-                '255, 0, 170',   // magenta
-                '255, 255, 255'  // white
-            ];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        update(timestamp, canvasHeight) {
-            this.y -= this.speed;
-
-            if (!this.fadeStart && this.y < canvasHeight * 0.5) {
-                this.fadeStart = timestamp;
-            }
-
-            if (this.fadeStart) {
-                const elapsed = timestamp - this.fadeStart;
-                if (elapsed > this.fadeDelay) {
-                    this.opacity -= 0.01;
-                }
-            }
-
-            if (this.y < -5 || this.opacity <= 0) {
-                this.canvasWidth = heroWidth;
-                this.canvasHeight = heroHeight;
-                this.reset();
-            }
-        }
-
-        draw(ctx) {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
-            ctx.shadowBlur = 8;
-            ctx.shadowColor = `rgba(${this.color}, ${this.opacity})`;
-            ctx.fill();
-        }
-    }
-
-    let heroStars = [];
-    let heroStarsInitialized = false;
-
-    function initHeroStars() {
-        if (heroStarsInitialized || heroWidth === 0) return;
-        heroStars = Array.from({ length: 30 }, () => new HeroStar(heroWidth, heroHeight));
-        heroStars.forEach(star => {
-            star.y = Math.random() * heroHeight;
-        });
-        heroStarsInitialized = true;
-    }
-
-    function animateHeroStars(timestamp) {
-        if (!heroStarsInitialized) {
-            initHeroStars();
-        }
-        heroCtx.clearRect(0, 0, heroWidth, heroHeight);
-
-        heroStars.forEach(star => {
-            star.update(timestamp, heroHeight);
-            star.draw(heroCtx);
-        });
-
-        requestAnimationFrame(animateHeroStars);
-    }
-
-    requestAnimationFrame(animateHeroStars);
-
     // Scroll Reveal Animation
     const observerOptions = {
         root: null,
@@ -773,39 +552,11 @@
         });
     }, observerOptions);
 
-    // Observe all scroll-reveal elements
     document.querySelectorAll('.scroll-reveal, .project-card').forEach(el => {
         revealOnScroll.observe(el);
     });
 
-    // Glow Card Effect - Mouse tracking
-    const cards = document.querySelectorAll('.project-card, .glow-card');
-
-    // Only enable glow effect on desktop (no touch)
-    if (!('ontouchstart' in window)) {
-        window.addEventListener('mousemove', (e) => {
-            cards.forEach(card => {
-                const blob = card.querySelector('.glow-blob');
-                const target = card.querySelector('.glow-target');
-                if (!blob || !target) return;
-
-                const rect = card.getBoundingClientRect();
-                // Different blob sizes: hero=300, glow-card=250, project-card=200
-                let blobSize = 200;
-                if (card.classList.contains('hero-content')) {
-                    blobSize = 300;
-                } else if (card.classList.contains('glow-card')) {
-                    blobSize = 250;
-                }
-                const x = e.clientX - rect.left - (blobSize / 2);
-                const y = e.clientY - rect.top - (blobSize / 2);
-
-                blob.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        });
-    }
-
-    // Hero parallax on scroll (subtle) + hide scroll indicator
+    // Hero parallax on scroll + hide scroll indicator
     const heroContent = document.querySelector('.hero-content');
     const scrollIndicator = document.querySelector('.scroll-indicator');
     let ticking = false;
@@ -815,10 +566,9 @@
             window.requestAnimationFrame(() => {
                 const scrolled = window.scrollY;
                 if (heroContent && scrolled < window.innerHeight) {
-                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-                    heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+                    heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
+                    heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.4;
                 }
-                // Hide scroll indicator on scroll
                 if (scrollIndicator) {
                     if (scrolled > 20) {
                         scrollIndicator.classList.add('hidden');
@@ -836,7 +586,6 @@
     (function() {
         const form = document.getElementById('contactForm');
         const formLoadTime = Date.now();
-
 
         // Rate limiting (localStorage)
         const RATE_KEY = 'seo_form_sub';
@@ -892,7 +641,7 @@
             waMsg += 'Website: ' + url;
             if (message) waMsg += '\n\nNachricht: ' + message;
 
-            // Phone (same obfuscation as below)
+            // Phone (obfuscated)
             var c = ['\x34','\x31','\x37','\x36','\x32','\x38','\x31','\x38','\x35','\x38','\x32'];
             var pc = c.join('');
 
